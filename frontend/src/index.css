@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Define Tailwind overrides with User's custom hex values */
+  --color-blue-50: rgba(104, 80, 242, 0.05);
+  --color-blue-100: rgba(104, 80, 242, 0.1);
+  --color-blue-500: #6850F2; /* Royal Blue */
+  --color-blue-600: #6850F2; /* Royal Blue */
+  --color-blue-700: #5B5FEF; /* Indigo */
+  
+  --color-teal-500: #42E2D0; /* Aqua */
+  --color-teal-650: #34BEA9;
+  
+  --color-pink-500: #F58FA8; /* Coral Pink */
+  --color-pink-650: #EC8B9A;
+  
+  --color-yellow-500: #F8C79A; /* Peach */
+  --color-purple-500: #8B5CF6; /* Soft Purple */
+  --color-indigo-500: #5B5FEF; /* Indigo */
+}
+
+@layer base {
+  :root {
+    --font-heading: 'Outfit', 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    
+    /* User Color Map variables */
+    --bg-main: #F4F6FA;       /* Soft Gray */
+    --bg-card: #FFFFFF;       /* White */
+    --border-color: rgba(104, 80, 242, 0.1);
+    
+    --text-primary: #2E3558;  /* Dark Navy */
+    --text-secondary: #64748B; /* Slate Gray */
+    
+    --text-muted: #94A3B8;
+    
+    --royal-blue: #6850F2;
+    --indigo: #5B5FEF;
+    --soft-purple: #8B5CF6;
+    --lavender: #C8B6FF;
+    --sky-blue: #49C6F8;
+    --cyan: #59D9F8;
+    --aqua: #42E2D0;
+    --mint-green: #7EE7C4;
+    --soft-green: #B8E986;
+    --peach: #F8C79A;
+    --coral-pink: #F58FA8;
+    --baby-pink: #F8B4D9;
+    --light-lilac: #DCC8FF;
+    
+    --shadow-sm: 0 4px 14px rgba(46, 53, 88, 0.03);
+    --shadow-md: 0 12px 36px rgba(46, 53, 88, 0.05), 0 4px 12px rgba(0, 0, 0, 0.01);
+    --shadow-lg: 0 24px 60px rgba(104, 80, 242, 0.08), 0 8px 24px rgba(46, 53, 88, 0.02);
+    --glass-blur: 16px;
+  }
+
+  .dark {
+    /* Keep dark mode clean with custom accents */
+    --bg-main: #141622;
+    --bg-card: rgba(30, 35, 58, 0.9);
+    --border-color: rgba(255, 255, 255, 0.08);
+    
+    --text-primary: #F8FAFC;
+    --text-secondary: #C8B6FF;
+    --text-muted: #64748B;
+  }
+  
+  body {
+    background-color: var(--bg-main);
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(220, 200, 255, 0.35) 0px, transparent 60%),       /* Light Lilac */
+      radial-gradient(at 100% 100%, rgba(200, 182, 255, 0.35) 0px, transparent 60%),   /* Lavender */
+      radial-gradient(at 50% 0%, rgba(184, 233, 134, 0.25) 0px, transparent 60%),      /* Soft Green */
+      linear-gradient(135deg, #FFFFFF 0%, #F4F6FA 100%);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+  }
+
+  .dark body {
+    background-color: var(--bg-main);
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(104, 80, 242, 0.15) 0px, transparent 65%), 
+      radial-gradient(at 100% 100%, rgba(66, 226, 208, 0.12) 0px, transparent 65%),
+      linear-gradient(135deg, #1A1D2E 0%, #141622 100%);
+    background-attachment: fixed;
+  }
+}
+
+/* User Specific Card Colors Definitions */
+.card-soft-purple { background-color: #8B5CF6 !important; color: #FFFFFF !important; }
+.card-sky-blue { background-color: #49C6F8 !important; color: #2E3558 !important; }
+.card-mint-green { background-color: #7EE7C4 !important; color: #2E3558 !important; }
+.card-peach { background-color: #F8C79A !important; color: #2E3558 !important; }
+.card-baby-pink { background-color: #F8B4D9 !important; color: #2E3558 !important; }
+.card-white { background-color: #FFFFFF !important; color: #2E3558 !important; }
+
+/* Ensure card text overrides fit color accessibility */
+.card-soft-purple *, .card-soft-purple span, .card-soft-purple h3, .card-soft-purple p { color: #FFFFFF !important; }
+.card-sky-blue *, .card-sky-blue span, .card-sky-blue h3, .card-sky-blue p { color: #2E3558 !important; }
+.card-mint-green *, .card-mint-green span, .card-mint-green h3, .card-mint-green p { color: #2E3558 !important; }
+.card-peach *, .card-peach span, .card-peach h3, .card-peach p { color: #2E3558 !important; }
+.card-baby-pink *, .card-baby-pink span, .card-baby-pink h3, .card-baby-pink p { color: #2E3558 !important; }
+
+/* Glassmorphic Sidebar Theme using User Colors */
+.sidebar-navy {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  color: #2E3558 !important; /* Dark Navy */
+  border-right: 1px solid rgba(104, 80, 242, 0.08) !important;
+  box-shadow: 4px 0 24px rgba(46, 53, 88, 0.02) !important;
+}
+
+.dark .sidebar-navy {
+  background-color: rgba(25, 30, 52, 0.95) !important;
+  color: #F8FAFC !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+.sidebar-navy span, .sidebar-navy button {
+  color: #2E3558 !important;
+}
+
+.dark .sidebar-navy span, .dark .sidebar-navy button {
+  color: #F8FAFC !important;
+}
+
+.sidebar-navy nav button {
+  color: #64748B !important; /* Slate Gray */
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark .sidebar-navy nav button {
+  color: #C8B6FF !important; /* Lavender */
+}
+
+.sidebar-navy nav button:hover {
+  background-color: rgba(104, 80, 242, 0.05) !important;
+  color: #6850F2 !important; /* Royal Blue */
+}
+
+/* Active tab button uses linear Dribbble gradient: Royal Blue to Cyan */
+.sidebar-navy nav button.bg-blue-600 {
+  background: linear-gradient(135deg, #6850F2 0%, #59D9F8 100%) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 15px rgba(104, 80, 242, 0.2) !important;
+}
+.sidebar-navy nav button.bg-blue-600 * {
+  color: #FFFFFF !important;
+}
+
+/* 🎨 Vibrant specific Platform Brand Gradients (Matches screenshot EXACTLY!) */
+.category-folder-YouTube { background: linear-gradient(135deg, #FF6584 0%, #FF8B8B 100%) !important; } /* Coral Red/Pink */
+.category-folder-Instagram { background: linear-gradient(135deg, #A855F7 0%, #F43F5E 100%) !important; } /* Purple to Deep Pink */
+.category-folder-LinkedIn { background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%) !important; } /* Bright blue to sky blue */
+.category-folder-GitHub { background: linear-gradient(135deg, #0D9488 0%, #14B8A6 100%) !important; } /* Teal to Mint */
+.category-folder-TwitterX { background: linear-gradient(135deg, #38BDF8 0%, #7DD3FC 100%) !important; } /* Sky Blue */
+.category-folder-Facebook { background: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%) !important; } /* Royal Blue */
+.category-folder-Reddit { background: linear-gradient(135deg, #F97316 0%, #FB923C 100%) !important; } /* Orange/Coral */
+.category-folder-Medium { background: linear-gradient(135deg, #FBBF24 0%, #FDE047 100%) !important; } /* Golden Yellow */
+.category-folder-Devto { background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%) !important; } /* Purple/Lavender */
+.category-folder-PersonalWebsite { background: linear-gradient(135deg, #14B8A6 0%, #2DD4BF 100%) !important; } /* Teal/Aqua */
+.category-folder-Other { background: linear-gradient(135deg, #F43F5E 0%, #FB7185 100%) !important; } /* Rose/Coral Pink */
+
+/* 🎨 Vibrant Folder Cards Gradients for custom folders (index-based) */
+.category-folder-grad-0 { background: linear-gradient(135deg, #FF6584 0%, #FF8B8B 100%) !important; }
+.category-folder-grad-1 { background: linear-gradient(135deg, #A855F7 0%, #F43F5E 100%) !important; }
+.category-folder-grad-2 { background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%) !important; }
+.category-folder-grad-3 { background: linear-gradient(135deg, #0D9488 0%, #14B8A6 100%) !important; }
+.category-folder-grad-4 { background: linear-gradient(135deg, #38BDF8 0%, #7DD3FC 100%) !important; }
+.category-folder-grad-5 { background: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%) !important; }
+.category-folder-grad-6 { background: linear-gradient(135deg, #F97316 0%, #FB923C 100%) !important; }
+.category-folder-grad-7 { background: linear-gradient(135deg, #FBBF24 0%, #FDE047 100%) !important; }
+.category-folder-grad-8 { background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%) !important; }
+.category-folder-grad-9 { background: linear-gradient(135deg, #14B8A6 0%, #2DD4BF 100%) !important; }
+
+/* Apply transitions and hover effects directly to folder containers */
+[class*="category-folder-"], [class*="category-folder-grad-"] {
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+[class*="category-folder-"]:hover, [class*="category-folder-grad-"]:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+/* Force folder title and link counts to be clean white, but leave SVGs untouched */
+[class*="category-folder-"] h3, 
+[class*="category-folder-"] span, 
+[class*="category-folder-"] p,
+[class*="category-folder-grad-"] h3, 
+[class*="category-folder-grad-"] span, 
+[class*="category-folder-grad-"] p {
+  color: #FFFFFF !important;
+}
+
+/* 🏠 Dashboard Custom Layout Card Overrides (Vibrant Medium Shades) */
+.dashboard-add-link {
+  background: linear-gradient(135deg, #8B5CF6 0%, #a78eef 100%) !important; /* Medium Purple to Lavender */
+  border: 1px solid #8B5CF6 !important;
+  color: #FFFFFF !important;
+}
+.dashboard-add-link h2, 
+.dashboard-add-link label, 
+.dashboard-add-link span {
+  color: #FFFFFF !important;
+}
+.dashboard-add-link input, 
+.dashboard-add-link select {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  color: #2E3558 !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+.dashboard-add-link input::placeholder {
+  color: rgba(46, 53, 88, 0.6) !important;
+}
+.dashboard-add-link select option {
+  background-color: #ebe2e2 !important;
+  color: #2E3558 !important;
+}
+.dashboard-add-link button[type="submit"] {
+  background: #2E3558 !important;
+  color: #e8a4a4 !important;
+  border: none !important;
+}
+.dashboard-add-link button[type="submit"]:hover {
+  background: #1e223a !important;
+}
+
+.dashboard-missions {
+  background: linear-gradient(135deg, #49C6F8 0%, #59D9F8 100%) !important; /* Medium Sky Blue to Cyan */
+  border: 1px solid #49C6F8 !important;
+  color: #2E3558 !important;
+}
+.dashboard-missions h2, 
+.dashboard-missions span, 
+.dashboard-missions button {
+  color: #2E3558 !important;
+}
+
+.dashboard-quick-stats {
+  background: linear-gradient(135deg, #f3b7b7 0%, rgba(245, 143, 168, 0.15) 100%) !important; /* White to Coral Pink */
+  border: 1px solid #F58FA8 !important;
+}
+
+/* Global typography definitions based on User Specifications */
+h1, h2, h3, h4, h5, h6, 
+.text-slate-800, .text-slate-700, .text-slate-650 {
+  color: #2E3558 !important; /* Dark Navy text */
+}
+
+p, .text-slate-500, .text-slate-450, .text-slate-400 {
+  color: #64748B !important; /* Slate Gray text */
+}
+
+/* Glassmorphism styling utilities */
+.glass-panel {
+  background: var(--bg-card) !important;
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--border-color) !important;
+  box-shadow: var(--shadow-md);
+}
+
+.glass-card {
+  background: var(--bg-card) !important;
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--border-color) !important;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(104, 80, 242, 0.25) !important;
+}
+
+/* Standard button matches Royal Blue to Indigo */
+.bg-blue-600 {
+  background: linear-gradient(135deg, #6850F2 0%, #5B5FEF 100%) !important;
+  border: none !important;
+  color: #eb9f9f !important;
+}
+
+.bg-blue-600:hover {
+  background: linear-gradient(135deg, #5B5FEF 0%, #474BDB 100%) !important;
+}
+
+/* Neumorphic adjustments */
+.neumorphic-inset {
+  box-shadow: inset 2px 2px 5px rgba(46,53,88,0.03), inset -2px -2px 5px rgba(252, 167, 167, 0.7);
+}
+
+/* Glow details */
+.glow-primary {
+  box-shadow: 0 0 24px rgba(104, 80, 242, 0.15);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 9999px;
+  opacity: 0.4;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+.heading-font {
+  font-family: var(--font-heading);
+}

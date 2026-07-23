@@ -1,0 +1,15 @@
+{
+  "name": "smart-link-organizer",
+  "version": "1.0.0",
+  "description": "Smart Link Organizer fullstack MERN application with gamification and metadata scraper",
+  "main": "index.js",
+  "scripts": {
+    "install:all": "npm install && npm install --prefix backend && npm install --prefix frontend",
+    "start:backend": "npm start --prefix backend",
+    "start:frontend": "npm run dev --prefix frontend",
+    "dev": "concurrently \"npm run start:backend\" \"npm run start:frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
