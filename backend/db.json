@@ -119,7 +119,7 @@
     }
   ],
   "gamification": {
-    "xp": 194,
+    "xp": 219,
     "level": 2,
     "streak": 1,
     "lastActiveDate": "2026-07-23",
@@ -174,11 +174,12 @@
         "claimed": false
       }
     ],
-    "coins": 75,
+    "coins": 100,
     "dailyQuizSolved": true,
     "solvedRiddles": [
       "riddle_3",
-      "riddle_9"
+      "riddle_9",
+      "riddle_8"
     ]
   },
   "categories": [

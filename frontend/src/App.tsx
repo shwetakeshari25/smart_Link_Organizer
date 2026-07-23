@@ -15,7 +15,9 @@ import { SettingsView } from './components/SettingsView';
 import { LinkCard } from './components/LinkCard';
 import type { LinkItem } from './components/LinkCard';
 
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = window.location.hostname === 'localhost' 
+  ? 'http://localhost:5000/api' 
+  : 'https://smart-link-organizer-cejc.onrender.com/api';
 
 export default function App() {
   // Navigation & UI State
