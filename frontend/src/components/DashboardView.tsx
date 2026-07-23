@@ -41,6 +41,7 @@ interface DashboardViewProps {
   onRedeemItem: (itemId: string) => Promise<{ success: boolean; message: string }>;
   onSolveVideoQuiz?: (linkId: string, answerIndex: number) => Promise<{ success: boolean; message: string; coins?: number; xp?: number }>;
   onSolveRiddle: (riddleId: string, answerIndex: number) => Promise<{ success: boolean; message: string; coins?: number; xp?: number }>;
+  API_BASE: string;
 }
 
 export const DashboardView: React.FC<DashboardViewProps> = ({
@@ -57,7 +58,8 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
   onSolveQuiz,
   onRedeemItem,
   onSolveVideoQuiz,
-  onSolveRiddle
+  onSolveRiddle,
+  API_BASE
 }) => {
   const [urlInput, setUrlInput] = useState('');
   const [tagInput, setTagInput] = useState('');
@@ -367,7 +369,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         <GamesView 
           stats={stats}
           onSolveRiddle={onSolveRiddle}
-          API_BASE="http://localhost:5000/api"
+          API_BASE={API_BASE}
           isWidget={true}
         />
       )}

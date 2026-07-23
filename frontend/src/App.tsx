@@ -680,6 +680,7 @@ export default function App() {
                   onRedeemItem={handleRedeemItem}
                   onSolveRiddle={handleSolveRiddle}
                   onSolveVideoQuiz={handleSolveVideoQuiz}
+                  API_BASE={API_BASE}
                 />
               )}
 
