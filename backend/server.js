@@ -15,51 +15,206 @@ app.use(express.json());
 // Initialize Database connection
 await connectDB();
 
-// rotating educational daily trivia quiz pool
+// rotating general affairs daily trivia quiz pool
 const QUIZ_POOL = [
   {
-    question: "Which HTML5 element is used to display self-contained content, like illustrations, diagrams, or photos?",
-    options: ["<aside>", "<figure>", "<section>", "<details>"],
-    answerIndex: 1,
+    question: "Which country recently became the 32nd member of NATO in 2024?",
+    options: ["Finland", "Sweden", "Ukraine", "Switzerland"],
+    answerIndex: 1, // Sweden
     coinsReward: 25
   },
   {
-    question: "What is the primary purpose of a database index?",
-    options: ["To encrypt data", "To speed up data retrieval", "To save storage space", "To prevent duplicate entries"],
-    answerIndex: 1,
+    question: "Who is the current Secretary-General of the United Nations?",
+    options: ["Ban Ki-moon", "Kofi Annan", "António Guterres", "Tedros Adhanom"],
+    answerIndex: 2, // António Guterres
     coinsReward: 25
   },
   {
-    question: "In JavaScript, what is the value of 'typeof null'?",
-    options: ["'null'", "'undefined'", "'object'", "'number'"],
-    answerIndex: 2,
+    question: "Which space agency successfully landed the Chandrayaan-3 mission near the south pole of the Moon?",
+    options: ["NASA (USA)", "ESA (Europe)", "ISRO (India)", "JAXA (Japan)"],
+    answerIndex: 2, // ISRO
     coinsReward: 25
   },
   {
-    question: "Which Git command is used to combine multiple commits into a single commit before pushing?",
-    options: ["git merge", "git squash", "git rebase -i", "git commit --amend"],
-    answerIndex: 2,
+    question: "What is the capital city of Australia?",
+    options: ["Sydney", "Melbourne", "Canberra", "Brisbane"],
+    answerIndex: 2, // Canberra
     coinsReward: 25
   },
   {
-    question: "What does the 'S' in SOLID design principles stand for?",
-    options: ["Scope Isolation", "Single Responsibility", "State Management", "System Scalability"],
-    answerIndex: 1,
+    question: "Which ocean is the largest and deepest ocean on Earth?",
+    options: ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+    answerIndex: 3, // Pacific Ocean
     coinsReward: 25
   },
   {
-    question: "Which CSS layout model is designed for one-dimensional layouts (either columns or rows)?",
-    options: ["CSS Grid", "Flexbox", "Floats", "Positioning"],
-    answerIndex: 1,
+    question: "Which gas is the most abundant gas in Earth's atmosphere?",
+    options: ["Oxygen", "Nitrogen", "Carbon Dioxide", "Argon"],
+    answerIndex: 1, // Nitrogen
     coinsReward: 25
   },
   {
-    question: "Which HTTP status code represents a successful resource deletion?",
-    options: ["200 OK", "201 Created", "204 No Content", "404 Not Found"],
-    answerIndex: 2,
+    question: "Which scientist formulated the theory of General Relativity?",
+    options: ["Isaac Newton", "Albert Einstein", "Stephen Hawking", "Niels Bohr"],
+    answerIndex: 1, // Albert Einstein
     coinsReward: 25
   }
 ];
+
+// play anytime riddle game pool
+const RIDDLE_POOL = [
+  {
+    id: "riddle_1",
+    question: "I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?",
+    options: ["An Echo", "A Cloud", "A Shadow", "A Whisper"],
+    answerIndex: 0,
+    coinsReward: 25
+  },
+  {
+    id: "riddle_2",
+    question: "You measure my life in hours and I serve you by expiring. I'm quick when I'm thin and slow when I'm fat. What am I?",
+    options: ["A Battery", "A Candle", "An Hourglass", "A Matchstick"],
+    answerIndex: 1,
+    coinsReward: 25
+  },
+  {
+    id: "riddle_3",
+    question: "I have cities, but no houses. I have mountains, but no trees. I have water, but no fish. What am I?",
+    options: ["A Globe", "A Map", "A Painting", "A Book"],
+    answerIndex: 1,
+    coinsReward: 25
+  },
+  {
+    id: "riddle_4",
+    question: "What has keys but can't open locks, has space but no room, and you can enter but can't go outside?",
+    options: ["A Keyboard", "A Closet", "A Rocket", "A Piano"],
+    answerIndex: 0,
+    coinsReward: 25
+  },
+  {
+    id: "riddle_5",
+    question: "The more of them you take, the more you leave behind. What are they?",
+    options: ["Footsteps", "Breaths", "Memories", "Years"],
+    answerIndex: 0,
+    coinsReward: 25
+  },
+  {
+    id: "riddle_6",
+    question: "What is full of holes but still holds water?",
+    options: ["A Sponge", "A Net", "A Bucket", "A Strainer"],
+    answerIndex: 0,
+    coinsReward: 25
+  },
+  {
+    id: "riddle_7",
+    question: "What has hands but cannot clap?",
+    options: ["A Clock", "A Mannequin", "A Tree", "A Glove"],
+    answerIndex: 0,
+    coinsReward: 25
+  },
+  {
+    id: "riddle_8",
+    question: "What goes up but never comes down?",
+    options: ["Age", "A Balloon", "Smoke", "A Kite"],
+    answerIndex: 0,
+    coinsReward: 25
+  },
+  {
+    id: "riddle_9",
+    question: "I am clean when I am black, and dirty when I am white. What am I?",
+    options: ["A Blackboard", "A Coal", "A Towel", "A Paper"],
+    answerIndex: 0,
+    coinsReward: 25
+  },
+  {
+    id: "riddle_10",
+    question: "What has one eye but cannot see?",
+    options: ["A Needle", "A Cyclops", "A Storm", "A Potato"],
+    answerIndex: 0,
+    coinsReward: 25
+  }
+];
+
+function generateVideoQuizForLink(link) {
+  const title = link.title || "the saved video";
+  const platform = link.platform || "Video";
+  
+  const cleanTitle = title.replace(/[^\w\s\-\/\:\(\)\']/gi, '').trim().substring(0, 70);
+  const titleLower = title.toLowerCase();
+  
+  if (titleLower.includes('ai') || titleLower.includes('gpt') || titleLower.includes('llm') || titleLower.includes('agent')) {
+    return {
+      id: `vid_ai_${link._id}`,
+      question: `The video "${cleanTitle}" discusses Artificial Intelligence. What is a key characteristic of an AI agent?`,
+      options: [
+        "It acts autonomously to achieve a set goal",
+        "It requires step-by-step user input for every action",
+        "It only displays static content on web pages",
+        "It is unable to process natural language"
+      ],
+      answerIndex: 0,
+      coinsReward: 25
+    };
+  }
+  
+  if (titleLower.includes('react') || titleLower.includes('js') || titleLower.includes('javascript') || titleLower.includes('typescript') || titleLower.includes('frontend')) {
+    return {
+      id: `vid_web_${link._id}`,
+      question: `The video "${cleanTitle}" covers web development. In React, what is the primary purpose of the 'useEffect' hook?`,
+      options: [
+        "To perform side effects in functional components",
+        "To apply CSS styles to HTML elements",
+        "To compile JavaScript code into binary",
+        "To manage database connection strings"
+      ],
+      answerIndex: 0,
+      coinsReward: 25
+    };
+  }
+
+  if (titleLower.includes('python') || titleLower.includes('code') || titleLower.includes('programming') || titleLower.includes('develop')) {
+    return {
+      id: `vid_prog_${link._id}`,
+      question: `The video "${cleanTitle}" relates to software engineering. Which of these is a widely-used version control system?`,
+      options: [
+        "Docker",
+        "Git",
+        "Kubernetes",
+        "Jenkins"
+      ],
+      answerIndex: 1,
+      coinsReward: 25
+    };
+  }
+
+  if (titleLower.includes('money') || titleLower.includes('earn') || titleLower.includes('business') || titleLower.includes('finance') || titleLower.includes('invest')) {
+    return {
+      id: `vid_fin_${link._id}`,
+      question: `The video "${cleanTitle}" discusses business or finance. What is the definition of 'Revenue'?`,
+      options: [
+        "The total amount of money brought in by a company's operations",
+        "The net profit after subtracting all expenses",
+        "The tax paid to the government on capital gains",
+        "The amount of debt a company owes to its creditors"
+      ],
+      answerIndex: 0,
+      coinsReward: 25
+    };
+  }
+
+  return {
+    id: `vid_fall_${link._id}`,
+    question: `Which of the following topics is most directly related to the saved ${platform} video: "${cleanTitle}"?`,
+    options: [
+      `A tutorial or content focusing on "${cleanTitle.substring(0, 45)}..."`,
+      "A recipe for preparing traditional Japanese sushi",
+      "A guide to organic vegetable farming and soil treatment",
+      "A deep-dive research into global geothermal energy solutions"
+    ],
+    answerIndex: 0,
+    coinsReward: 25
+  };
+}
 
 // Gamification Helpers
 function getLevel(xp) {
@@ -276,6 +431,12 @@ app.put('/api/links/:id', async (req, res) => {
     const originalLink = await Link.findById(id);
     if (!originalLink) return res.status(404).json({ error: 'Link not found' });
     
+    // Generate quiz if marking completed
+    if (updates.progress === 'Completed' && originalLink.progress !== 'Completed') {
+      updates.quizQuestion = generateVideoQuizForLink(originalLink);
+      updates.quizSolved = false;
+    }
+
     const updatedLink = await Link.findByIdAndUpdate(id, updates, { new: true });
     
     let xpAward = 0;
@@ -363,7 +524,8 @@ app.get('/api/gamification', async (req, res) => {
       ...stats,
       xpForNextLevel: getXpForNextLevel(stats.level),
       coins: stats.coins || 0,
-      dailyQuizSolved: stats.dailyQuizSolved || false
+      dailyQuizSolved: stats.dailyQuizSolved || false,
+      solvedRiddles: stats.solvedRiddles || []
     });
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -436,12 +598,13 @@ app.get('/api/gamification/quiz', async (req, res) => {
   try {
     const stats = await Gamification.findOne();
     const dayIndex = new Date().getDay();
-    const activeQuestion = QUIZ_POOL[dayIndex];
+    const activeQuestion = QUIZ_POOL[dayIndex % QUIZ_POOL.length];
     
     res.json({
       question: activeQuestion.question,
       options: activeQuestion.options,
       coinsReward: activeQuestion.coinsReward,
+      answerIndex: activeQuestion.answerIndex, // Return so user can review correct answer
       solved: stats.dailyQuizSolved || false
     });
   } catch (error) {
@@ -459,7 +622,7 @@ app.post('/api/gamification/quiz/solve', async (req, res) => {
     }
     
     const dayIndex = new Date().getDay();
-    const activeQuestion = QUIZ_POOL[dayIndex];
+    const activeQuestion = QUIZ_POOL[dayIndex % QUIZ_POOL.length];
     
     if (parseInt(answerIndex) === activeQuestion.answerIndex) {
       const currentCoins = stats.coins || 0;
@@ -476,7 +639,158 @@ app.post('/api/gamification/quiz/solve', async (req, res) => {
         success: true,
         message: `Correct answer! Awarded ${activeQuestion.coinsReward} coins.`,
         coins: newCoins,
+        answerIndex: activeQuestion.answerIndex,
         dailyQuizSolved: true
+      });
+    } else {
+      res.json({
+        success: false,
+        message: "Incorrect answer. Try again!"
+      });
+    }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Riddle Fetch Route
+app.get('/api/gamification/riddle', async (req, res) => {
+  try {
+    const stats = await Gamification.findOne();
+    const videos = await Link.find({ platform: { $in: ['YouTube', 'Instagram'] } });
+    
+    const useVideo = videos.length > 0 && Math.random() < 0.3;
+    let riddle;
+    
+    if (useVideo) {
+      const selectedVideo = videos[Math.floor(Math.random() * videos.length)];
+      riddle = generateVideoQuizForLink(selectedVideo);
+      riddle.id = `video_riddle_${selectedVideo._id}`;
+    } else {
+      const solvedRiddles = stats.solvedRiddles || [];
+      const unsolvedRiddles = RIDDLE_POOL.filter(r => !solvedRiddles.includes(r.id));
+      
+      if (unsolvedRiddles.length > 0) {
+        riddle = unsolvedRiddles[Math.floor(Math.random() * unsolvedRiddles.length)];
+      } else {
+        riddle = RIDDLE_POOL[Math.floor(Math.random() * RIDDLE_POOL.length)];
+      }
+    }
+    
+    res.json({
+      id: riddle.id,
+      question: riddle.question,
+      options: riddle.options,
+      coinsReward: 25,
+      isRiddle: !useVideo
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Riddle Solve Route
+app.post('/api/gamification/riddle/solve', async (req, res) => {
+  const { riddleId, answerIndex } = req.body;
+  try {
+    const stats = await Gamification.findOne();
+    
+    let activeRiddle;
+    if (riddleId.startsWith('video_riddle_') || riddleId.startsWith('vid_')) {
+      const linkId = riddleId.replace('video_riddle_', '').replace('vid_fall_', '').replace('vid_prog_', '').replace('vid_web_', '').replace('vid_ai_', '').replace('vid_fin_', '');
+      const link = await Link.findById(linkId);
+      if (!link) return res.status(404).json({ error: "Linked video not found" });
+      activeRiddle = generateVideoQuizForLink(link);
+    } else {
+      activeRiddle = RIDDLE_POOL.find(r => r.id === riddleId);
+    }
+    
+    if (!activeRiddle) {
+      return res.status(404).json({ error: "Riddle not found" });
+    }
+    
+    if (parseInt(answerIndex) === activeRiddle.answerIndex) {
+      const currentCoins = stats.coins || 0;
+      const newCoins = currentCoins + 25;
+      
+      const solvedRiddles = stats.solvedRiddles || [];
+      if (!solvedRiddles.includes(riddleId)) {
+        solvedRiddles.push(riddleId);
+      }
+      
+      const gamificationUpdates = await addXP(25, 'Solved Riddle');
+      
+      await Gamification.findOneAndUpdate({}, {
+        $set: {
+          coins: newCoins,
+          solvedRiddles: solvedRiddles
+        }
+      });
+      
+      res.json({
+        success: true,
+        message: "Correct answer! Awarded 25 coins and 25 XP.",
+        coins: newCoins,
+        xp: gamificationUpdates.newXp,
+        level: gamificationUpdates.newLevel,
+        gamification: gamificationUpdates
+      });
+    } else {
+      res.json({
+        success: false,
+        message: "Incorrect answer. Try again!"
+      });
+    }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Video-specific Quiz Solve Route
+app.post('/api/links/:id/quiz/solve', async (req, res) => {
+  const { id } = req.params;
+  const { answerIndex } = req.body;
+  try {
+    const link = await Link.findById(id);
+    if (!link) return res.status(404).json({ error: 'Link not found' });
+    
+    if (link.quizSolved) {
+      return res.status(400).json({ error: 'You have already solved the quiz for this video!' });
+    }
+    
+    let activeQuestion = link.quizQuestion;
+    if (!activeQuestion) {
+      activeQuestion = generateVideoQuizForLink(link);
+    }
+    
+    if (parseInt(answerIndex) === activeQuestion.answerIndex) {
+      const stats = await Gamification.findOne();
+      const currentCoins = stats.coins || 0;
+      const newCoins = currentCoins + 25;
+      
+      const gamificationUpdates = await addXP(25, 'Video Quiz Solved');
+      
+      const updatedLink = await Link.findByIdAndUpdate(id, {
+        $set: {
+          quizSolved: true,
+          quizQuestion: activeQuestion
+        }
+      }, { new: true });
+      
+      await Gamification.findOneAndUpdate({}, {
+        $set: {
+          coins: newCoins
+        }
+      });
+      
+      res.json({
+        success: true,
+        message: "Correct! Awarded 25 coins and 25 XP.",
+        coins: newCoins,
+        xp: gamificationUpdates.newXp,
+        level: gamificationUpdates.newLevel,
+        link: updatedLink,
+        gamification: gamificationUpdates
       });
     } else {
       res.json({

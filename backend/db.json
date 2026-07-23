@@ -41,8 +41,8 @@
       "savedAt": "2026-07-23T15:52:22.516Z",
       "favorite": false,
       "notes": "",
-      "progress": "Not Started",
-      "progressPercent": 0,
+      "progress": "Completed",
+      "progressPercent": 100,
       "openedCount": 0,
       "tags": [],
       "url": "https://youtu.be/V7vfte4GUIc?si=hQJFU5AGZiX7dZOE",
@@ -52,7 +52,21 @@
       "favicon": "https://www.youtube.com/favicon.ico",
       "domain": "youtu.be",
       "platform": "YouTube",
-      "category": "YouTube"
+      "category": "YouTube",
+      "quizQuestion": {
+        "id": "vid_fall_lnk_7o7tzilvt",
+        "question": "Which of the following topics is most directly related to the saved YouTube video: \"Jetha  Friends   Samosa-Kachori    Taarak Mehta Ka Ooltah Chashmah  Je\"?",
+        "options": [
+          "A tutorial or content focusing on \"Jetha  Friends   Samosa-Kachori    Taarak Meh...\"",
+          "A recipe for preparing traditional Japanese sushi",
+          "A guide to organic vegetable farming and soil treatment",
+          "A deep-dive research into global geothermal energy solutions"
+        ],
+        "answerIndex": 0,
+        "coinsReward": 25
+      },
+      "quizSolved": false,
+      "lastOpened": "2026-07-23T18:56:42.490Z"
     },
     {
       "_id": "lnk_y15bsu3de",
@@ -88,11 +102,24 @@
       "favicon": "https://static.licdn.com/aero-v1/sc/h/al2o9zrvru7aqj8e1x2rzsrca",
       "domain": "linkedin.com",
       "platform": "LinkedIn",
-      "category": "LinkedIn"
+      "category": "LinkedIn",
+      "quizQuestion": {
+        "id": "vid_fall_lnk_podv37g48",
+        "question": "Which of the following topics is most directly related to the saved LinkedIn video: \"Shift Your Focus: Solutions Over Problems \n\nInstead of getting stuck o\"?",
+        "options": [
+          "A tutorial or content focusing on \"Shift Your Focus: Solutions Over Problems \n\nI...\"",
+          "A recipe for preparing traditional Japanese sushi",
+          "A guide to organic vegetable farming and soil treatment",
+          "A deep-dive research into global geothermal energy solutions"
+        ],
+        "answerIndex": 0,
+        "coinsReward": 25
+      },
+      "quizSolved": false
     }
   ],
   "gamification": {
-    "xp": 104,
+    "xp": 194,
     "level": 2,
     "streak": 1,
     "lastActiveDate": "2026-07-23",
@@ -114,7 +141,7 @@
         "id": "open_links",
         "title": "Open 3 saved links",
         "target": 3,
-        "current": 0,
+        "current": 1,
         "xpReward": 30,
         "completed": false,
         "claimed": false
@@ -123,7 +150,7 @@
         "id": "complete_learning",
         "title": "Complete 2 learning videos/articles",
         "target": 2,
-        "current": 0,
+        "current": 1,
         "xpReward": 40,
         "completed": false,
         "claimed": false
@@ -147,8 +174,12 @@
         "claimed": false
       }
     ],
-    "coins": 25,
-    "dailyQuizSolved": true
+    "coins": 75,
+    "dailyQuizSolved": true,
+    "solvedRiddles": [
+      "riddle_3",
+      "riddle_9"
+    ]
   },
   "categories": [
     {

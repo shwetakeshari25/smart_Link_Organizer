@@ -157,7 +157,8 @@ export default function App() {
           }));
           setQuiz((prev: any) => ({
             ...prev,
-            solved: true
+            solved: true,
+            answerIndex: result.answerIndex
           }));
           return { success: true, message: result.message };
         } else {
@@ -170,6 +171,8 @@ export default function App() {
       return { success: false, message: 'Server error' };
     }
   };
+
+
 
   const handleRedeemItem = async (itemId: string) => {
     try {
@@ -196,6 +199,62 @@ export default function App() {
       console.error(e);
       alert('Redemption failed due to server connection issue');
       return { success: false, message: 'Connection error' };
+    }
+  };
+
+  const handleSolveRiddle = async (riddleId: string, answerIndex: number) => {
+    try {
+      const response = await fetch(`${API_BASE}/gamification/riddle/solve`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ riddleId, answerIndex })
+      });
+      const result = await response.json();
+      if (response.ok && result.success) {
+        setStats((prev: any) => ({
+          ...prev,
+          coins: result.coins,
+          xp: result.xp,
+          level: result.level,
+          solvedRiddles: result.gamification?.solvedRiddles || prev.solvedRiddles
+        }));
+        handleLevelUpCheck(result.gamification);
+        refreshStatsAndNotifications();
+        return { success: true, message: result.message };
+      } else {
+        return { success: false, message: result.message || result.error || 'Incorrect answer' };
+      }
+    } catch (e) {
+      console.error(e);
+      return { success: false, message: 'Server error' };
+    }
+  };
+
+  const handleSolveVideoQuiz = async (linkId: string, answerIndex: number) => {
+    try {
+      const response = await fetch(`${API_BASE}/links/${linkId}/quiz/solve`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ answerIndex })
+      });
+      const result = await response.json();
+      if (response.ok && result.success) {
+        setLinks(prev => prev.map(item => item._id === linkId ? result.link : item));
+        setStats((prev: any) => ({
+          ...prev,
+          coins: result.coins,
+          xp: result.xp,
+          level: result.level
+        }));
+        handleLevelUpCheck(result.gamification);
+        refreshStatsAndNotifications();
+        return { success: true, message: result.message };
+      } else {
+        return { success: false, message: result.message || result.error || 'Incorrect answer' };
+      }
+    } catch (e) {
+      console.error(e);
+      return { success: false, message: 'Server error' };
     }
   };
 
@@ -617,6 +676,8 @@ export default function App() {
                   quiz={quiz}
                   onSolveQuiz={handleSolveQuiz}
                   onRedeemItem={handleRedeemItem}
+                  onSolveRiddle={handleSolveRiddle}
+                  onSolveVideoQuiz={handleSolveVideoQuiz}
                 />
               )}
 
@@ -632,6 +693,7 @@ export default function App() {
                   onDeleteLink={handleDeleteLink}
                   onOpenLink={handleOpenLink}
                   stats={stats}
+                  onSolveVideoQuiz={handleSolveVideoQuiz}
                 />
               )}
 
@@ -661,6 +723,8 @@ export default function App() {
                           onUpdate={handleUpdateLink} 
                           onDelete={handleDeleteLink}
                           onOpen={handleOpenLink}
+                          hasGoldTheme={stats?.badges?.includes("Theme: Gold Card Glow")}
+                          onSolveVideoQuiz={handleSolveVideoQuiz}
                         />
                       ))}
                     </div>
@@ -683,6 +747,8 @@ export default function App() {
                   onResetMissions={handleResetMissions}
                   quiz={quiz}
                   onSolveQuiz={handleSolveQuiz}
+                  onSolveRiddle={handleSolveRiddle}
+                  API_BASE={API_BASE}
                 />
               )}
 

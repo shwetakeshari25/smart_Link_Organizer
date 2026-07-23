@@ -30,6 +30,7 @@ interface CategoriesViewProps {
   onDeleteLink: (id: string) => Promise<void>;
   onOpenLink: (id: string) => Promise<void>;
   stats: any;
+  onSolveVideoQuiz?: (linkId: string, answerIndex: number) => Promise<{ success: boolean; message: string; coins?: number; xp?: number }>;
 }
 
 export const CategoriesView: React.FC<CategoriesViewProps> = ({
@@ -42,7 +43,8 @@ export const CategoriesView: React.FC<CategoriesViewProps> = ({
   onUpdateLink,
   onDeleteLink,
   onOpenLink,
-  stats
+  stats,
+  onSolveVideoQuiz
 }) => {
   // Helper to map category name to its brand icon matching the screen photo
   const getCategoryBrandIcon = (name: string) => {
@@ -481,6 +483,7 @@ export const CategoriesView: React.FC<CategoriesViewProps> = ({
                   onDelete={onDeleteLink}
                   onOpen={onOpenLink}
                   hasGoldTheme={stats?.badges?.includes("Theme: Gold Card Glow")}
+                  onSolveVideoQuiz={onSolveVideoQuiz}
                 />
               ))}
             </div>

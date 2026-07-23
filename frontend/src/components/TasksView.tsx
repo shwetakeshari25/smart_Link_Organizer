@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { 
   CheckCircle, Target, Sparkles, AlertCircle, RefreshCw, Trophy
 } from 'lucide-react';
+import { GamesView } from './GamesView';
 
 interface Mission {
   id: string;
@@ -26,6 +27,8 @@ interface TasksViewProps {
   onResetMissions: () => Promise<void>;
   quiz: any;
   onSolveQuiz: (answerIndex: number) => Promise<{ success: boolean; message: string }>;
+  onSolveRiddle?: (riddleId: string, answerIndex: number) => Promise<{ success: boolean; message: string; coins?: number; xp?: number }>;
+  API_BASE?: string;
 }
 
 export const TasksView: React.FC<TasksViewProps> = ({ 
@@ -33,7 +36,9 @@ export const TasksView: React.FC<TasksViewProps> = ({
   onClaimReward, 
   onResetMissions, 
   quiz, 
-  onSolveQuiz 
+  onSolveQuiz,
+  onSolveRiddle,
+  API_BASE
 }) => {
   const [isResetting, setIsResetting] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -101,43 +106,70 @@ export const TasksView: React.FC<TasksViewProps> = ({
             </div>
           </div>
 
-          {quiz.solved ? (
-            <div className="p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-2xl flex items-center gap-3">
+          {quiz.solved && (
+            <div className="p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-2xl flex items-center gap-3 mb-4">
               <CheckCircle className="w-6 h-6 text-emerald-500 shrink-0" />
               <div>
                 <h4 className="text-sm font-bold text-emerald-700 dark:text-emerald-300">Quiz Solved!</h4>
                 <p className="text-xs text-slate-500 mt-0.5">You have earned your 💰 {quiz.coinsReward} coins for today's trivia. Come back tomorrow!</p>
               </div>
             </div>
-          ) : (
-            <div className="space-y-3">
-              <p className="text-sm font-semibold text-slate-700 dark:text-slate-200">
-                {quiz.question}
-              </p>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {quiz.options.map((opt: string, idx: number) => (
+          )}
+
+          <div className="space-y-3">
+            <p className="text-sm font-semibold text-slate-700 dark:text-slate-200">
+              {quiz.question}
+            </p>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {quiz.options.map((opt: string, idx: number) => {
+                const isCorrect = quiz.solved && idx === quiz.answerIndex;
+                let btnStyle = "border-slate-200 dark:border-slate-800/85 bg-white dark:bg-slate-900 text-slate-705 dark:text-slate-350";
+                
+                if (quiz.solved) {
+                  if (isCorrect) {
+                    btnStyle = "border-emerald-500 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-extrabold";
+                  } else {
+                    btnStyle = "border-slate-100 dark:border-slate-900 bg-slate-50/50 dark:bg-slate-950/20 text-slate-400 dark:text-slate-655 cursor-not-allowed opacity-50";
+                  }
+                } else {
+                  btnStyle += " hover:border-[#8B5CF6]/50 dark:hover:border-[#8B5CF6]/50 hover:bg-slate-50 dark:hover:bg-slate-850 cursor-pointer";
+                }
+
+                return (
                   <button
                     key={idx}
-                    onClick={() => handleQuizSubmit(idx)}
-                    disabled={submitting}
-                    className="p-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/85 hover:border-[#8B5CF6]/50 dark:hover:border-[#8B5CF6]/50 rounded-xl text-xs font-bold text-slate-705 dark:text-slate-350 text-left transition-all hover:bg-slate-50 dark:hover:bg-slate-850 cursor-pointer disabled:opacity-50 flex items-center"
+                    onClick={() => !quiz.solved && handleQuizSubmit(idx)}
+                    disabled={submitting || quiz.solved}
+                    className={`p-3 border rounded-xl text-xs font-bold text-left transition-all flex items-center ${btnStyle}`}
                   >
-                    <span className="inline-block w-5 h-5 text-center leading-5 bg-slate-100 dark:bg-slate-800 rounded-md mr-2.5 text-slate-500 font-extrabold text-[10px]">
+                    <span className={`inline-block w-5 h-5 text-center leading-5 bg-slate-100 dark:bg-slate-805 rounded-md mr-2.5 text-slate-500 font-extrabold text-[10px] ${
+                      isCorrect ? 'bg-emerald-500/20 text-emerald-600' : ''
+                    }`}>
                       {String.fromCharCode(65 + idx)}
                     </span>
                     <span className="flex-1">{opt}</span>
                   </button>
-                ))}
-              </div>
-              {quizResultMsg && (
-                <p className={`text-xs font-bold mt-2 ${quizResultMsg.includes('Correct') ? 'text-emerald-500' : 'text-rose-500'}`}>
-                  {quizResultMsg}
-                </p>
-              )}
+                );
+              })}
             </div>
-          )}
+            {quizResultMsg && (
+              <p className={`text-xs font-bold mt-2 ${quizResultMsg.includes('Correct') ? 'text-emerald-500' : 'text-rose-500'}`}>
+                {quizResultMsg}
+              </p>
+            )}
+          </div>
         </div>
+      )}
+
+      {/* Riddle Game Section */}
+      {onSolveRiddle && API_BASE && (
+        <GamesView 
+          stats={stats}
+          onSolveRiddle={onSolveRiddle}
+          API_BASE={API_BASE}
+          isWidget={true}
+        />
       )}
 
       {/* Progress Cards Banner */}

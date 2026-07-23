@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { 
   Heart, Trash2, ExternalLink, Plus, X, Edit3, 
   BookOpen, CheckCircle, Clock, Youtube, Github, 
-  Linkedin, Instagram, Twitter, Facebook, Globe, Link2, MessageSquare
+  Linkedin, Instagram, Twitter, Facebook, Globe, Link2, MessageSquare,
+  CheckCircle2, Sparkles
 } from 'lucide-react';
 
 export interface LinkItem {
@@ -23,6 +24,8 @@ export interface LinkItem {
   savedAt: string;
   openedCount: number;
   lastOpened?: string;
+  quizSolved?: boolean;
+  quizQuestion?: any;
 }
 
 interface LinkCardProps {
@@ -31,13 +34,22 @@ interface LinkCardProps {
   onDelete: (id: string) => Promise<void>;
   onOpen: (id: string) => Promise<void>;
   hasGoldTheme?: boolean;
+  onSolveVideoQuiz?: (linkId: string, answerIndex: number) => Promise<{ success: boolean; message: string; coins?: number; xp?: number }>;
 }
 
-export const LinkCard: React.FC<LinkCardProps> = ({ link, onUpdate, onDelete, onOpen, hasGoldTheme }) => {
+export const LinkCard: React.FC<LinkCardProps> = ({ link, onUpdate, onDelete, onOpen, hasGoldTheme, onSolveVideoQuiz }) => {
   const [isEditingNotes, setIsEditingNotes] = useState(false);
   const [noteText, setNoteText] = useState(link.notes);
   const [isEditingTags, setIsEditingTags] = useState(false);
   const [newTag, setNewTag] = useState('');
+
+  const handleSeenToggle = async () => {
+    if (link.progress === 'Completed') {
+      await onUpdate(link._id, { progress: 'Not Started', progressPercent: 0, quizSolved: false, quizQuestion: null });
+    } else {
+      await onUpdate(link._id, { progress: 'Completed', progressPercent: 100 });
+    }
+  };
 
   // Get logo and color based on platform
   const getPlatformDetails = (platform: string) => {
@@ -362,21 +374,97 @@ export const LinkCard: React.FC<LinkCardProps> = ({ link, onUpdate, onDelete, on
               </div>
             </div>
           )}
+
+          {/* Video/Resource Quiz Section */}
+          {link.progress === 'Completed' && link.quizQuestion && (
+            <div className="mt-4 p-3 bg-gradient-to-tr from-indigo-500/5 to-purple-500/5 border border-indigo-500/10 rounded-2xl space-y-2">
+              <div className="flex justify-between items-center">
+                <span className="text-[10px] uppercase font-black tracking-wider text-indigo-600 dark:text-indigo-400 flex items-center gap-1">
+                  <Sparkles className="w-3.5 h-3.5 text-amber-500" /> Resource Trivia Quiz
+                </span>
+                <span className="text-[9px] font-black text-amber-600 dark:text-amber-450 bg-yellow-500/10 px-1.5 py-0.5 rounded-full">
+                  💰 +25 Coins
+                </span>
+              </div>
+
+              <div className="space-y-2">
+                <p className="text-[11px] font-bold text-slate-700 dark:text-slate-205 leading-tight">
+                  {link.quizQuestion.question}
+                </p>
+                <div className="grid grid-cols-1 gap-1">
+                  {link.quizQuestion.options.map((opt: string, idx: number) => {
+                    const isCorrect = idx === link.quizQuestion.answerIndex;
+                    let btnStyle = "border-slate-200 dark:border-slate-800/80 bg-white dark:bg-slate-900 text-slate-655 dark:text-slate-350 hover:bg-slate-50 dark:hover:bg-slate-850 hover:border-indigo-500/50";
+                    
+                    if (link.quizSolved) {
+                      if (isCorrect) {
+                        btnStyle = "border-emerald-500 bg-emerald-500/10 text-emerald-600 dark:text-emerald-450 font-black cursor-not-allowed";
+                      } else {
+                        btnStyle = "border-slate-100 dark:border-slate-900 bg-slate-50/50 dark:bg-slate-950/20 text-slate-400 dark:text-slate-655 cursor-not-allowed opacity-40";
+                      }
+                    }
+
+                    return (
+                      <button
+                        key={idx}
+                        disabled={link.quizSolved}
+                        onClick={async () => {
+                          if (onSolveVideoQuiz) {
+                            const res = await onSolveVideoQuiz(link._id, idx);
+                            if (!res.success) {
+                              alert(res.message);
+                            }
+                          }
+                        }}
+                        className={`w-full p-2 border rounded-xl text-[10px] text-left font-bold cursor-pointer flex items-center transition-all animate-fade-in ${btnStyle}`}
+                      >
+                        <span className={`inline-block w-4 h-4 text-center leading-4 bg-slate-100 dark:bg-slate-800 rounded mr-2 text-slate-500 font-black text-[9px] ${
+                          link.quizSolved && isCorrect ? 'bg-emerald-500/20 text-emerald-600' : ''
+                        }`}>
+                          {String.fromCharCode(65 + idx)}
+                        </span>
+                        <span className="flex-1 leading-none truncate">{opt}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+                {link.quizSolved && (
+                  <div className="flex items-center gap-1.5 p-2 bg-emerald-500/5 border border-emerald-500/10 rounded-xl text-[10px] font-bold text-emerald-600 dark:text-emerald-450">
+                    <CheckCircle className="w-3.5 h-3.5 text-emerald-500" />
+                    <span>Solved! 💰 +25 Coins & 🔥 +25 XP added.</span>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Footer actions */}
         <div className="border-t border-slate-100 dark:border-slate-800/60 pt-3 flex items-center justify-between gap-1.5">
-          {/* Progress Selector */}
-          <div className="relative">
+          {/* Progress Selector & Mark Seen Button */}
+          <div className="flex items-center gap-1.5">
             <select
               value={link.progress}
               onChange={(e) => handleProgressChange(e.target.value as any)}
-              className="text-xs font-semibold text-slate-600 dark:text-slate-300 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 px-2 py-1.5 rounded-lg outline-none cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700/50 transition-colors"
+              className="text-xs font-semibold text-slate-655 dark:text-slate-300 bg-slate-550/5 dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 px-2 py-1.5 rounded-lg outline-none cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700/50 transition-colors"
             >
               <option value="Not Started">Not Started</option>
               <option value="Watching">Watching</option>
               <option value="Completed">Completed</option>
             </select>
+
+            <button
+              onClick={handleSeenToggle}
+              className={`flex items-center gap-1 px-2 py-1.5 rounded-lg text-[10px] font-bold border transition-all cursor-pointer ${
+                link.progress === 'Completed'
+                  ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-600 dark:text-emerald-400 font-extrabold'
+                  : 'bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700/85 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-705'
+              }`}
+              title={link.progress === 'Completed' ? "Mark as Incomplete" : "Mark as Completed"}
+            >
+              <CheckCircle2 className={`w-3.5 h-3.5 ${link.progress === 'Completed' ? 'fill-emerald-500/10 text-emerald-500' : 'text-slate-450'}`} />
+              <span>{link.progress === 'Completed' ? 'Completed' : 'Complete'}</span>
+            </button>
           </div>
 
           {/* Quick Actions */}

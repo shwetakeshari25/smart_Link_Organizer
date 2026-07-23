@@ -5,6 +5,7 @@ import {
 } from 'lucide-react';
 import { LinkCard } from './LinkCard';
 import type { LinkItem } from './LinkCard';
+import { GamesView } from './GamesView';
 
 interface Mission {
   id: string;
@@ -38,6 +39,8 @@ interface DashboardViewProps {
   quiz: any;
   onSolveQuiz: (answerIndex: number) => Promise<{ success: boolean; message: string }>;
   onRedeemItem: (itemId: string) => Promise<{ success: boolean; message: string }>;
+  onSolveVideoQuiz?: (linkId: string, answerIndex: number) => Promise<{ success: boolean; message: string; coins?: number; xp?: number }>;
+  onSolveRiddle: (riddleId: string, answerIndex: number) => Promise<{ success: boolean; message: string; coins?: number; xp?: number }>;
 }
 
 export const DashboardView: React.FC<DashboardViewProps> = ({
@@ -52,7 +55,9 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
   isLoading,
   quiz,
   onSolveQuiz,
-  onRedeemItem
+  onRedeemItem,
+  onSolveVideoQuiz,
+  onSolveRiddle
 }) => {
   const [urlInput, setUrlInput] = useState('');
   const [tagInput, setTagInput] = useState('');
@@ -301,43 +306,70 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             </div>
           </div>
 
-          {quiz.solved ? (
-            <div className="p-4 bg-emerald-550/10 border border-emerald-500/20 rounded-2xl flex items-center gap-3">
+          {quiz.solved && (
+            <div className="p-4 bg-emerald-550/10 border border-emerald-500/20 rounded-2xl flex items-center gap-3 mb-4">
               <CheckCircle2 className="w-6 h-6 text-emerald-500 shrink-0" />
               <div>
-                <h4 className="text-sm font-bold text-emerald-700 dark:text-emerald-300">Daily Challenge Completed!</h4>
+                <h4 className="text-sm font-bold text-emerald-700 dark:text-emerald-350">Daily Challenge Completed!</h4>
                 <p className="text-xs text-slate-550 mt-0.5">You solved today's trivia challenge and pocketed your 💰 {quiz.coinsReward} coins reward. Keep it up!</p>
               </div>
             </div>
-          ) : (
-            <div className="space-y-3">
-              <p className="text-sm font-bold text-slate-750 dark:text-slate-200">
-                {quiz.question}
-              </p>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {quiz.options.map((opt: string, idx: number) => (
+          )}
+
+          <div className="space-y-3">
+            <p className="text-sm font-bold text-slate-750 dark:text-slate-200">
+              {quiz.question}
+            </p>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {quiz.options.map((opt: string, idx: number) => {
+                const isCorrect = quiz.solved && idx === quiz.answerIndex;
+                let btnStyle = "border-slate-200 dark:border-slate-800/80 bg-white dark:bg-slate-900 text-slate-705 dark:text-slate-350";
+                
+                if (quiz.solved) {
+                  if (isCorrect) {
+                    btnStyle = "border-emerald-500 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-extrabold";
+                  } else {
+                    btnStyle = "border-slate-100 dark:border-slate-900 bg-slate-50/50 dark:bg-slate-950/20 text-slate-400 dark:text-slate-655 cursor-not-allowed opacity-50";
+                  }
+                } else {
+                  btnStyle += " hover:border-[#8B5CF6]/50 dark:hover:border-[#8B5CF6]/50 hover:bg-slate-50 dark:hover:bg-slate-850 cursor-pointer";
+                }
+
+                return (
                   <button
                     key={idx}
-                    onClick={() => handleQuizSubmit(idx)}
-                    disabled={submittingQuiz}
-                    className="p-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/80 hover:border-[#8B5CF6]/50 dark:hover:border-[#8B5CF6]/50 rounded-xl text-xs font-bold text-slate-705 dark:text-slate-350 text-left transition-all hover:bg-slate-50 dark:hover:bg-slate-850 cursor-pointer disabled:opacity-50 flex items-center"
+                    onClick={() => !quiz.solved && handleQuizSubmit(idx)}
+                    disabled={submittingQuiz || quiz.solved}
+                    className={`p-3 border rounded-xl text-xs font-bold text-left transition-all flex items-center ${btnStyle}`}
                   >
-                    <span className="inline-block w-5 h-5 text-center leading-5 bg-slate-100 dark:bg-slate-805 rounded-md mr-2.5 text-slate-500 font-extrabold text-[10px]">
+                    <span className={`inline-block w-5 h-5 text-center leading-5 bg-slate-100 dark:bg-slate-805 rounded-md mr-2.5 text-slate-500 font-extrabold text-[10px] ${
+                      isCorrect ? 'bg-emerald-500/20 text-emerald-600' : ''
+                    }`}>
                       {String.fromCharCode(65 + idx)}
                     </span>
                     <span className="flex-1">{opt}</span>
                   </button>
-                ))}
-              </div>
-              {quizMsg && (
-                <p className={`text-xs font-bold mt-2 ${quizMsg.includes('Correct') ? 'text-emerald-500' : 'text-rose-500'}`}>
-                  {quizMsg}
-                </p>
-              )}
+                );
+              })}
             </div>
-          )}
+            {quizMsg && (
+              <p className={`text-xs font-bold mt-2 ${quizMsg.includes('Correct') ? 'text-emerald-500' : 'text-rose-500'}`}>
+                {quizMsg}
+              </p>
+            )}
+          </div>
         </div>
+      )}
+
+      {/* Riddle Game Section */}
+      {onSolveRiddle && (
+        <GamesView 
+          stats={stats}
+          onSolveRiddle={onSolveRiddle}
+          API_BASE="http://localhost:5000/api"
+          isWidget={true}
+        />
       )}
 
       {/* Grid of Daily Missions and Quick Stats */}
@@ -601,6 +633,8 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 onUpdate={onUpdateLink} 
                 onDelete={onDeleteLink}
                 onOpen={onOpenLink}
+                hasGoldTheme={stats?.badges?.includes("Theme: Gold Card Glow")}
+                onSolveVideoQuiz={onSolveVideoQuiz}
               />
             ))}
           </div>

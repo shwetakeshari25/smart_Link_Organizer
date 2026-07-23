@@ -17,8 +17,10 @@ if (!fs.existsSync(JSON_DB_PATH)) {
       streak: 0,
       coins: 0,
       dailyQuizSolved: false,
+      solvedRiddles: [],
       lastActiveDate: '',
       badges: [],
+      solvedRiddles: [],
       dailyMissions: [
         { id: 'save_links', title: 'Save 5 links', target: 5, current: 0, xpReward: 50, coinsReward: 15, completed: false, claimed: false },
         { id: 'open_links', title: 'Open 3 saved links', target: 3, current: 0, xpReward: 30, coinsReward: 10, completed: false, claimed: false },
@@ -102,9 +104,12 @@ const LinkSchema = new mongoose.Schema({
   notes: { type: String, default: '' },
   progress: { type: String, default: 'Not Started' }, // 'Not Started', 'Watching', 'Completed'
   progressPercent: { type: Number, default: 0 },
+  quizSolved: { type: Boolean, default: false },
   savedAt: { type: Date, default: Date.now },
   openedCount: { type: Number, default: 0 },
-  lastOpened: Date
+  lastOpened: Date,
+  quizSolved: { type: Boolean, default: false },
+  quizQuestion: { type: Object, default: null }
 });
 
 const CategorySchema = new mongoose.Schema({
@@ -125,8 +130,10 @@ const GamificationSchema = new mongoose.Schema({
   streak: { type: Number, default: 0 },
   coins: { type: Number, default: 0 },
   dailyQuizSolved: { type: Boolean, default: false },
+  solvedRiddles: [String],
   lastActiveDate: String,
   badges: [String],
+  solvedRiddles: { type: [String], default: [] },
   dailyMissions: [{
     id: String,
     title: String,
@@ -190,6 +197,8 @@ export const Link = {
       progressPercent: 0,
       openedCount: 0,
       tags: [],
+      quizSolved: false,
+      quizQuestion: null,
       ...data
     };
     db.links.push(newLink);
@@ -240,8 +249,35 @@ export const Link = {
 
 export const Category = {
   find: async () => {
-    if (!useLocalDB) return MongoCategory.find().lean();
-    return readLocalDB().categories || [];
+    const defaultCats = [
+      { id: 'cat_yt', name: 'YouTube', icon: '📺' },
+      { id: 'cat_ig', name: 'Instagram', icon: '📸' },
+      { id: 'cat_li', name: 'LinkedIn', icon: '💼' },
+      { id: 'cat_gh', name: 'GitHub', icon: '💻' },
+      { id: 'cat_tw', name: 'Twitter/X', icon: '🐦' },
+      { id: 'cat_fb', name: 'Facebook', icon: '👥' },
+      { id: 'cat_rd', name: 'Reddit', icon: '🤖' },
+      { id: 'cat_md', name: 'Medium', icon: '✍️' },
+      { id: 'cat_dv', name: 'Dev.to', icon: '🛠️' },
+      { id: 'cat_web', name: 'Personal Website', icon: '🌐' },
+      { id: 'cat_oth', name: 'Other', icon: '🔗' }
+    ];
+
+    if (!useLocalDB) {
+      let cats = await MongoCategory.find().lean();
+      if (!cats || cats.length === 0) {
+        await MongoCategory.insertMany(defaultCats);
+        cats = await MongoCategory.find().lean();
+      }
+      return cats;
+    }
+    
+    const db = readLocalDB();
+    if (!db.categories || db.categories.length === 0) {
+      db.categories = defaultCats;
+      writeLocalDB(db);
+    }
+    return db.categories;
   },
 
   create: async (data) => {
@@ -309,7 +345,7 @@ export const Gamification = {
       if (!g) {
         // Seed default
         const created = new MongoGamification({
-          xp: 0, level: 1, streak: 0, coins: 0, dailyQuizSolved: false, lastActiveDate: '', badges: [],
+          xp: 0, level: 1, streak: 0, coins: 0, dailyQuizSolved: false, solvedRiddles: [], lastActiveDate: '', badges: [], solvedRiddles: [],
           dailyMissions: [
             { id: 'save_links', title: 'Save 5 links', target: 5, current: 0, xpReward: 50, coinsReward: 15, completed: false, claimed: false },
             { id: 'open_links', title: 'Open 3 saved links', target: 3, current: 0, xpReward: 30, coinsReward: 10, completed: false, claimed: false },
