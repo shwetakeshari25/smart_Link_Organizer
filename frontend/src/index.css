@@ -3,21 +3,21 @@
 
 @theme {
   /* Define Tailwind overrides with User's custom hex values */
-  --color-blue-50: rgba(204, 162, 90, 0.05);
-  --color-blue-100: rgba(204, 162, 90, 0.1);
-  --color-blue-500: #CCA25A; /* Siltstone Ochre Gold */
-  --color-blue-600: #CCA25A; /* Siltstone Ochre Gold */
-  --color-blue-700: #CBBD93; /* Siltstone Sandy Sage */
+  --color-blue-50: rgba(163, 143, 133, 0.05);
+  --color-blue-100: rgba(163, 143, 133, 0.1);
+  --color-blue-500: #A38F85; /* Warm Nude Brown */
+  --color-blue-600: #A38F85; /* Warm Nude Brown */
+  --color-blue-700: #D7C4B7; /* Soft Nude Beige */
   
-  --color-teal-500: #CCA25A;
-  --color-teal-650: #BCA06B;
+  --color-teal-500: #A38F85;
+  --color-teal-650: #CBB6A9;
   
-  --color-pink-500: #FFB16E; /* Siltstone Apricot Orange */
-  --color-pink-650: #E5A062;
+  --color-pink-500: #EAD2C3; /* Muted Rose Nude */
+  --color-pink-650: #D0B8A8;
   
-  --color-yellow-500: #FFF5B8; /* Siltstone Pale Cream */
-  --color-purple-500: #FFB16E;
-  --color-indigo-500: #CBBD93;
+  --color-yellow-500: #FFFDF2; /* Pale Butter Cream */
+  --color-purple-500: #A38F85;
+  --color-indigo-500: #D7C4B7;
 }
 
 @layer base {
@@ -26,53 +26,53 @@
     --font-body: 'Inter', sans-serif;
     
     /* User Color Map variables */
-    --bg-main: #FFFDF5;       /* Siltstone Butter Cream */
+    --bg-main: #FAF7F2;       /* Warm Sand Cream */
     --bg-card: #FFFFFF;       /* White */
-    --border-color: rgba(204, 162, 90, 0.12);
+    --border-color: rgba(163, 143, 133, 0.12);
     
-    --text-primary: #302C26;  /* Formal Dark Espresso */
-    --text-secondary: #70665A; /* Siltstone Taupe */
+    --text-primary: #3D352E;  /* Formal Dark Espresso */
+    --text-secondary: #8A7E72; /* Siltstone Taupe */
     
-    --text-muted: #A69C8E;
+    --text-muted: #BDB2A6;
     
-    --royal-blue: #CCA25A;
-    --indigo: #CBBD93;
-    --soft-purple: #FFB16E;
-    --lavender: #FFF5B8;
-    --sky-blue: #CBBD93;
-    --cyan: #EDD6C0;
-    --aqua: #CCA25A;
-    --mint-green: #CBBD93;
-    --soft-green: #FFF5B8;
-    --peach: #FFB16E;
-    --coral-pink: #FFB16E;
-    --baby-pink: #FFFDF2;
-    --light-lilac: #CBBD93;
+    --royal-blue: #A38F85;
+    --indigo: #D7C4B7;
+    --soft-purple: #EAD2C3;
+    --lavender: #FFFDF2;
+    --sky-blue: #D7C4B7;
+    --cyan: #FAF7F2;
+    --aqua: #A38F85;
+    --mint-green: #D7C4B7;
+    --soft-green: #EAD2C3;
+    --peach: #FFFDF2;
+    --coral-pink: #A38F85;
+    --baby-pink: #FAF7F2;
+    --light-lilac: #D7C4B7;
     
-    --shadow-sm: 0 4px 14px rgba(48, 44, 38, 0.03);
-    --shadow-md: 0 12px 36px rgba(48, 44, 38, 0.05), 0 4px 12px rgba(0, 0, 0, 0.01);
-    --shadow-lg: 0 24px 60px rgba(204, 162, 90, 0.08), 0 8px 24px rgba(48, 44, 38, 0.02);
+    --shadow-sm: 0 4px 14px rgba(61, 53, 46, 0.03);
+    --shadow-md: 0 12px 36px rgba(61, 53, 46, 0.05), 0 4px 12px rgba(0, 0, 0, 0.01);
+    --shadow-lg: 0 24px 60px rgba(163, 143, 133, 0.08), 0 8px 24px rgba(61, 53, 46, 0.02);
     --glass-blur: 16px;
   }
 
   .dark {
     /* Keep dark mode clean with custom accents */
-    --bg-main: #1C1A14;
-    --bg-card: rgba(38, 35, 28, 0.9);
+    --bg-main: #191614;
+    --bg-card: rgba(38, 33, 30, 0.9);
     --border-color: rgba(255, 255, 255, 0.08);
     
-    --text-primary: #FFFDF5;
-    --text-secondary: #FFF5B8;
-    --text-muted: #70665A;
+    --text-primary: #FAF7F2;
+    --text-secondary: #EAD2C3;
+    --text-muted: #8A7E72;
   }
   
   body {
     background-color: var(--bg-main);
     background-image: 
-      radial-gradient(at 0% 0%, rgba(203, 189, 147, 0.35) 0px, transparent 60%),       /* Sandy Sage */
-      radial-gradient(at 100% 100%, rgba(204, 162, 90, 0.25) 0px, transparent 60%),   /* Ochre Gold */
-      radial-gradient(at 50% 0%, rgba(255, 245, 184, 0.5) 0px, transparent 60%),      /* Pale Cream */
-      linear-gradient(135deg, #FFFDF5 0%, #F7F3E3 100%);
+      radial-gradient(at 0% 0%, rgba(215, 196, 183, 0.35) 0px, transparent 60%),       /* Soft Nude */
+      radial-gradient(at 100% 100%, rgba(163, 143, 133, 0.25) 0px, transparent 60%),   /* Warm Sand */
+      radial-gradient(at 50% 0%, rgba(245, 239, 235, 0.5) 0px, transparent 60%),      /* Pale Cream */
+      linear-gradient(135deg, #FFFDFB 0%, #FAF7F2 100%);
     background-attachment: fixed;
     color: var(--text-primary);
     font-family: var(--font-body);
@@ -83,32 +83,32 @@
   .dark body {
     background-color: var(--bg-main);
     background-image: 
-      radial-gradient(at 0% 0%, rgba(204, 162, 90, 0.15) 0px, transparent 65%), 
-      radial-gradient(at 100% 100%, rgba(203, 189, 147, 0.12) 0px, transparent 65%),
-      linear-gradient(135deg, #2E2A20 0%, #1C1A14 100%);
+      radial-gradient(at 0% 0%, rgba(163, 143, 133, 0.15) 0px, transparent 65%), 
+      radial-gradient(at 100% 100%, rgba(215, 196, 183, 0.12) 0px, transparent 65%),
+      linear-gradient(135deg, #2A2521 0%, #191614 100%);
     background-attachment: fixed;
   }
 }
 
 /* User Specific Card Colors Definitions */
-.card-soft-purple { background-color: #FFB16E !important; color: #FFFFFF !important; }
-.card-sky-blue { background-color: #D4C5B9 !important; color: #302C26 !important; }
-.card-mint-green { background-color: #7EE7C4 !important; color: #302C26 !important; }
-.card-peach { background-color: #F8C79A !important; color: #302C26 !important; }
-.card-baby-pink { background-color: #F8B4D9 !important; color: #302C26 !important; }
-.card-white { background-color: #FFFFFF !important; color: #302C26 !important; }
+.card-soft-purple { background-color: #EAD2C3 !important; color: #FFFFFF !important; }
+.card-sky-blue { background-color: #D4C5B9 !important; color: #3D352E !important; }
+.card-mint-green { background-color: #7EE7C4 !important; color: #3D352E !important; }
+.card-peach { background-color: #F8C79A !important; color: #3D352E !important; }
+.card-baby-pink { background-color: #F8B4D9 !important; color: #3D352E !important; }
+.card-white { background-color: #FFFFFF !important; color: #3D352E !important; }
 
 /* Ensure card text overrides fit color accessibility */
 .card-soft-purple *, .card-soft-purple span, .card-soft-purple h3, .card-soft-purple p { color: #FFFFFF !important; }
-.card-sky-blue *, .card-sky-blue span, .card-sky-blue h3, .card-sky-blue p { color: #302C26 !important; }
-.card-mint-green *, .card-mint-green span, .card-mint-green h3, .card-mint-green p { color: #302C26 !important; }
-.card-peach *, .card-peach span, .card-peach h3, .card-peach p { color: #302C26 !important; }
-.card-baby-pink *, .card-baby-pink span, .card-baby-pink h3, .card-baby-pink p { color: #302C26 !important; }
+.card-sky-blue *, .card-sky-blue span, .card-sky-blue h3, .card-sky-blue p { color: #3D352E !important; }
+.card-mint-green *, .card-mint-green span, .card-mint-green h3, .card-mint-green p { color: #3D352E !important; }
+.card-peach *, .card-peach span, .card-peach h3, .card-peach p { color: #3D352E !important; }
+.card-baby-pink *, .card-baby-pink span, .card-baby-pink h3, .card-baby-pink p { color: #3D352E !important; }
 
 /* Glassmorphic Sidebar Theme using User Colors */
 .sidebar-navy {
   background-color: rgba(255, 255, 255, 0.95) !important;
-  color: #302C26 !important; /* Siltstone Espresso */
+  color: #3D352E !important; /* Siltstone Espresso */
   border-right: 1px solid rgba(204, 162, 90, 0.12) !important;
   box-shadow: 4px 0 24px rgba(48, 44, 38, 0.02) !important;
 }
@@ -120,7 +120,7 @@
 }
 
 .sidebar-navy span, .sidebar-navy button {
-  color: #302C26 !important;
+  color: #3D352E !important;
 }
 
 .dark .sidebar-navy span, .dark .sidebar-navy button {
@@ -138,12 +138,12 @@
 
 .sidebar-navy nav button:hover {
   background-color: rgba(204, 162, 90, 0.05) !important;
-  color: #CCA25A !important; /* Ochre Gold */
+  color: #A38F85 !important; /* Ochre Gold */
 }
 
 /* Active tab button uses linear Dribbble gradient: Royal Blue to Cyan */
 .sidebar-navy nav button.bg-blue-600 {
-  background: linear-gradient(135deg, #CCA25A 0%, #CBBD93 100%) !important;
+  background: linear-gradient(135deg, #A38F85 0%, #D7C4B7 100%) !important;
   color: #FFFFFF !important;
   box-shadow: 0 4px 15px rgba(204, 162, 90, 0.15) !important;
 }
@@ -152,29 +152,29 @@
 }
 
 /* 🎨 Vibrant specific Platform Brand Gradients (Matches screenshot EXACTLY!) */
-.category-folder-YouTube { background: linear-gradient(135deg, #FF6584 0%, #FF8B8B 100%) !important; } /* Coral Red/Pink */
-.category-folder-Instagram { background: linear-gradient(135deg, #A855F7 0%, #F43F5E 100%) !important; } /* Purple to Deep Pink */
-.category-folder-LinkedIn { background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%) !important; } /* Bright blue to sky blue */
-.category-folder-GitHub { background: linear-gradient(135deg, #0D9488 0%, #14B8A6 100%) !important; } /* Teal to Mint */
-.category-folder-TwitterX { background: linear-gradient(135deg, #38BDF8 0%, #7DD3FC 100%) !important; } /* Sky Blue */
-.category-folder-Facebook { background: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%) !important; } /* Royal Blue */
-.category-folder-Reddit { background: linear-gradient(135deg, #F97316 0%, #FB923C 100%) !important; } /* Orange/Coral */
-.category-folder-Medium { background: linear-gradient(135deg, #FBBF24 0%, #FDE047 100%) !important; } /* Golden Yellow */
-.category-folder-Devto { background: linear-gradient(135deg, #FFB16E 0%, #A78BFA 100%) !important; } /* Purple/Lavender */
-.category-folder-PersonalWebsite { background: linear-gradient(135deg, #14B8A6 0%, #2DD4BF 100%) !important; } /* Teal/Aqua */
-.category-folder-Other { background: linear-gradient(135deg, #F43F5E 0%, #FB7185 100%) !important; } /* Rose/Coral Pink */
+.category-folder-YouTube { background: linear-gradient(135deg, #ECC8AF 0%, #D4A373 100%) !important; } /* Warm nude apricot */
+.category-folder-Instagram { background: linear-gradient(135deg, #D7B59F 0%, #B58263 100%) !important; } /* Desert rose nude */
+.category-folder-LinkedIn { background: linear-gradient(135deg, #D6C2B0 0%, #A9907E 100%) !important; } /* Warm taupe nude */
+.category-folder-GitHub { background: linear-gradient(135deg, #C2B09F 0%, #8F7664 100%) !important; } /* Cool clay nude */
+.category-folder-TwitterX { background: linear-gradient(135deg, #E2CFC0 0%, #B89C86 100%) !important; } /* Soft sand nude */
+.category-folder-Facebook { background: linear-gradient(135deg, #D0B8A8 0%, #9A7E6F 100%) !important; } /* English leather nude */
+.category-folder-Reddit { background: linear-gradient(135deg, #DFD3C3 0%, #C7B198 100%) !important; } /* Parchment nude */
+.category-folder-Medium { background: linear-gradient(135deg, #F0E5D8 0%, #D8C3A5 100%) !important; } /* Butter cream nude */
+.category-folder-Devto { background: linear-gradient(135deg, #E6D5C3 0%, #BCA896 100%) !important; } /* Earthy dust nude */
+.category-folder-PersonalWebsite { background: linear-gradient(135deg, #D8C8B8 0%, #9F8A78 100%) !important; } /* Deep clay nude */
+.category-folder-Other { background: linear-gradient(135deg, #ECC8AF 0%, #C4A48A 100%) !important; } /* Latte nude */
 
 /* 🎨 Vibrant Folder Cards Gradients for custom folders (index-based) */
-.category-folder-grad-0 { background: linear-gradient(135deg, #DEAB90 0%, #EDC4B3 100%) !important; } /* Warm Peach/Rose */
-.category-folder-grad-1 { background: linear-gradient(135deg, #B08968 0%, #D4C5B9 100%) !important; } /* Bronze Tan */
-.category-folder-grad-2 { background: linear-gradient(135deg, #CCA25A 0%, #FFB16E 100%) !important; } /* Caramel Tan */
-.category-folder-grad-3 { background: linear-gradient(135deg, #CBBD93 0%, #9C7A5D 100%) !important; } /* Chestnut */
-.category-folder-grad-4 { background: linear-gradient(135deg, #DEAB90 0%, #E3D5CA 100%) !important; } /* Terracotta Clay */
-.category-folder-grad-5 { background: linear-gradient(135deg, #C6AC8F 0%, #EAE0D5 100%) !important; } /* Warm Sand */
-.category-folder-grad-6 { background: linear-gradient(135deg, #EDC4B3 0%, #F5EBE0 100%) !important; } /* Cream Peach */
-.category-folder-grad-7 { background: linear-gradient(135deg, #CCA25A 0%, #C6AC8F 100%) !important; } /* Leather & Sand */
-.category-folder-grad-8 { background: linear-gradient(135deg, #FFB16E 0%, #EAE0D5 100%) !important; } /* Camel & Parchment */
-.category-folder-grad-9 { background: linear-gradient(135deg, #CBBD93 0%, #C6AC8F 100%) !important; } /* Espresso & Sand */
+.category-folder-grad-0 { background: linear-gradient(135deg, #ECC8AF 0%, #D4A373 100%) !important; }
+.category-folder-grad-1 { background: linear-gradient(135deg, #D7B59F 0%, #B58263 100%) !important; }
+.category-folder-grad-2 { background: linear-gradient(135deg, #D6C2B0 0%, #A9907E 100%) !important; }
+.category-folder-grad-3 { background: linear-gradient(135deg, #C2B09F 0%, #8F7664 100%) !important; }
+.category-folder-grad-4 { background: linear-gradient(135deg, #E2CFC0 0%, #B89C86 100%) !important; }
+.category-folder-grad-5 { background: linear-gradient(135deg, #D0B8A8 0%, #9A7E6F 100%) !important; }
+.category-folder-grad-6 { background: linear-gradient(135deg, #DFD3C3 0%, #C7B198 100%) !important; }
+.category-folder-grad-7 { background: linear-gradient(135deg, #F0E5D8 0%, #D8C3A5 100%) !important; }
+.category-folder-grad-8 { background: linear-gradient(135deg, #E6D5C3 0%, #BCA896 100%) !important; }
+.category-folder-grad-9 { background: linear-gradient(135deg, #D8C8B8 0%, #9F8A78 100%) !important; }
 
 /* Apply transitions and hover effects directly to folder containers */
 [class*="category-folder-"], [class*="category-folder-grad-"] {
@@ -197,8 +197,8 @@
 
 /* 🏠 Dashboard Custom Layout Card Overrides (Vibrant Medium Shades) */
 .dashboard-add-link {
-  background: linear-gradient(135deg, #FFB16E 0%, #C6AC8F 100%) !important; /* Medium Purple to Lavender */
-  border: 1px solid #FFB16E !important;
+  background: linear-gradient(135deg, #A38F85 0%, #CBB6A9 100%) !important; /* Warm Nude Brown to Beige */
+  border: 1px solid #A38F85 !important;
   color: #FFFFFF !important;
 }
 .dashboard-add-link h2, 
@@ -209,45 +209,45 @@
 .dashboard-add-link input, 
 .dashboard-add-link select {
   background-color: rgba(255, 255, 255, 0.9) !important;
-  color: #302C26 !important;
+  color: #3D352E !important;
   border: 1px solid rgba(255, 255, 255, 0.5) !important;
 }
 .dashboard-add-link input::placeholder {
-  color: rgba(46, 53, 88, 0.6) !important;
+  color: rgba(61, 53, 46, 0.6) !important;
 }
 .dashboard-add-link select option {
-  background-color: #ebe2e2 !important;
-  color: #302C26 !important;
+  background-color: #FAF7F2 !important;
+  color: #3D352E !important;
 }
 .dashboard-add-link button[type="submit"] {
-  background: #302C26 !important;
-  color: #e8a4a4 !important;
+  background: #3D352E !important;
+  color: #FFFFFF !important;
   border: none !important;
 }
 .dashboard-add-link button[type="submit"]:hover {
-  background: #1e223a !important;
+  background: #2A2521 !important;
 }
 
 .dashboard-missions {
-  background: linear-gradient(135deg, #D4C5B9 0%, #EAE0D5 100%) !important; /* Medium Sky Blue to Cyan */
-  border: 1px solid #D4C5B9 !important;
-  color: #302C26 !important;
+  background: linear-gradient(135deg, #EAD2C3 0%, #FAF7F2 100%) !important; /* Muted Apricot Nude to Cream */
+  border: 1px solid #EAD2C3 !important;
+  color: #3D352E !important;
 }
 .dashboard-missions h2, 
 .dashboard-missions span, 
 .dashboard-missions button {
-  color: #302C26 !important;
+  color: #3D352E !important;
 }
 
 .dashboard-quick-stats {
   background: linear-gradient(135deg, #FFF5B8 0%, rgba(255, 177, 110, 0.15) 100%) !important; /* Cream to Apricot */
-  border: 1px solid #FFB16E !important;
+  border: 1px solid #EAD2C3 !important;
 }
 
 /* Global typography definitions based on User Specifications */
 h1, h2, h3, h4, h5, h6, 
 .text-slate-800, .text-slate-700, .text-slate-650 {
-  color: #302C26 !important; /* Formal Siltstone Espresso text */
+  color: #3D352E !important; /* Formal Siltstone Espresso text */
 }
 
 p, .text-slate-500, .text-slate-450, .text-slate-400 {
@@ -280,13 +280,13 @@ p, .text-slate-500, .text-slate-450, .text-slate-400 {
 
 /* Standard button matches Royal Blue to Indigo */
 .bg-blue-600 {
-  background: linear-gradient(135deg, #CCA25A 0%, #CBBD93 100%) !important;
+  background: linear-gradient(135deg, #A38F85 0%, #D7C4B7 100%) !important;
   border: none !important;
   color: #FFFFFF !important;
 }
 
 .bg-blue-600:hover {
-  background: linear-gradient(135deg, #CBBD93 0%, #BCA06B 100%) !important;
+  background: linear-gradient(135deg, #D7C4B7 0%, #BCA06B 100%) !important;
 }
 
 /* Neumorphic adjustments */
