@@ -263,13 +263,13 @@ export const CategoriesView: React.FC<CategoriesViewProps> = ({
                         <div className="flex gap-1 justify-end">
                           <button 
                             onClick={() => setEditingCatId('')}
-                            className="px-2.5 py-1 text-[10px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded font-semibold"
+                            className="px-2.5 py-1 text-[10px] bg-[#EBE3D5] text-[#2C332A] rounded font-semibold"
                           >
                             Cancel
                           </button>
                           <button 
                             onClick={handleSaveRename}
-                            className="px-2.5 py-1 text-[10px] bg-blue-600 text-white rounded font-semibold"
+                            className="px-2.5 py-1 text-[10px] bg-blue-600 text-[#2C332A] rounded font-semibold"
                           >
                             Save
                           </button>
@@ -278,12 +278,12 @@ export const CategoriesView: React.FC<CategoriesViewProps> = ({
                     ) : (
                       <>
                         <div className="flex justify-between items-start">
-                          <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-md">
+                          <div className="w-12 h-12 bg-[#FAF6EE]/80 rounded-2xl flex items-center justify-center shadow-md">
                             {getCategoryBrandIcon(cat.name)}
                           </div>
                           <button 
                             onClick={(e) => handleStartRename(e, cat)}
-                            className="opacity-0 group-hover/folder:opacity-100 p-1.5 hover:text-blue-500 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/80 text-slate-400 dark:text-slate-500 transition-all"
+                            className="opacity-0 group-hover/folder:opacity-100 p-1.5 hover:text-blue-500 rounded-lg hover:bg-[#EBE3D5] text-[#2C332A] transition-all"
                             title="Rename Category"
                           >
                             <Edit3 className="w-3.5 h-3.5" />
@@ -294,7 +294,7 @@ export const CategoriesView: React.FC<CategoriesViewProps> = ({
                           <h3 className="heading-font text-base font-extrabold text-slate-800 dark:text-white mb-0.5 truncate">
                             {cat.name}
                           </h3>
-                          <span className="text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wide">
+                          <span className="text-[11px] font-bold text-[#2C332A]/70 uppercase tracking-wide">
                             {count} {count === 1 ? 'link' : 'links'}
                           </span>
                         </div>
@@ -319,7 +319,7 @@ export const CategoriesView: React.FC<CategoriesViewProps> = ({
               </div>
               <button 
                 onClick={() => setShowNewCollectionModal(true)}
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-sm hover:shadow transition-all cursor-pointer"
+                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-[#2C332A] rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-sm hover:shadow transition-all cursor-pointer"
               >
                 <FolderPlus className="w-4 h-4" /> Create Folder
               </button>
@@ -335,12 +335,12 @@ export const CategoriesView: React.FC<CategoriesViewProps> = ({
                     className={`p-5 rounded-2xl border border-slate-200/50 dark:border-slate-800/30 flex flex-col justify-between h-40 cursor-pointer group/col category-folder-grad-${(index + 3) % 10}`}
                   >
                     <div className="flex justify-between items-start">
-                      <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-md text-[#D3ECD1]">
+                      <div className="w-12 h-12 bg-[#FAF6EE]/80 rounded-2xl flex items-center justify-center shadow-md text-[#82C25C]">
                         <Folder className="w-6 h-6 fill-current" />
                       </div>
                       <button 
                         onClick={(e) => handleDeleteCol(e, col.id)}
-                        className="opacity-0 group-hover/col:opacity-100 p-1.5 hover:text-red-500 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/80 text-slate-400 dark:text-slate-500 transition-all"
+                        className="opacity-0 group-hover/col:opacity-100 p-1.5 hover:text-red-500 rounded-lg hover:bg-[#EBE3D5] text-[#2C332A] transition-all"
                         title="Delete Folder"
                       >
                         <Trash2 className="w-3.5 h-3.5" />
@@ -351,10 +351,10 @@ export const CategoriesView: React.FC<CategoriesViewProps> = ({
                       <h3 className="heading-font text-base font-extrabold text-slate-800 dark:text-white mb-0.5 truncate">
                         {col.name}
                       </h3>
-                      <p className="text-[10px] text-slate-400 dark:text-slate-500 truncate mb-1">
+                      <p className="text-[10px] text-[#2C332A]/70 truncate mb-1">
                         {col.description || 'No description'}
                       </p>
-                      <span className="text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wide">
+                      <span className="text-[11px] font-bold text-[#2C332A]/70 uppercase tracking-wide">
                         {count} {count === 1 ? 'link' : 'links'} (tagged)
                       </span>
                     </div>
@@ -497,11 +497,11 @@ export const CategoriesView: React.FC<CategoriesViewProps> = ({
           <div className="w-full max-w-md p-6 glass-panel rounded-3xl border-slate-200/50 dark:border-slate-800/30 shadow-2xl animate-scale-up">
             <div className="flex justify-between items-center mb-4">
               <h3 className="heading-font text-lg font-bold text-slate-800 dark:text-white flex items-center gap-1.5">
-                <FolderPlus className="w-5 h-5 text-indigo-500" /> Create Custom Folder
+                <FolderPlus className="w-5 h-5 text-[#82C25C]" /> Create Custom Folder
               </h3>
               <button 
                 onClick={() => setShowNewCollectionModal(false)}
-                className="p-1 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400"
+                className="p-1 rounded-lg hover:bg-[#EBE3D5] text-slate-400"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -539,13 +539,13 @@ export const CategoriesView: React.FC<CategoriesViewProps> = ({
                 <button 
                   type="button"
                   onClick={() => setShowNewCollectionModal(false)}
-                  className="px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-850 hover:bg-slate-200 text-slate-600 dark:text-slate-300 font-bold text-xs cursor-pointer"
+                  className="px-4 py-2.5 rounded-xl bg-[#EBE3D5] hover:bg-[#D8D2C4] text-[#2C332A] font-bold text-xs cursor-pointer"
                 >
                   Cancel
                 </button>
                 <button 
                   type="submit"
-                  className="px-4.5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-sm hover:shadow transition-all cursor-pointer"
+                  className="px-4.5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-[#2C332A] font-bold text-xs shadow-sm hover:shadow transition-all cursor-pointer"
                 >
                   Create Folder
                 </button>
