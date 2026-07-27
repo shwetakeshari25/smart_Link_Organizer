@@ -72,6 +72,7 @@
   --color-neutral-200: #EBE3D5;
   --color-neutral-500: #5E665C;
   --color-neutral-800: #2C332A;
+  --color-white: #FAF6EE; /* Override pure white with Linen Beige */
 }
 
 @layer base {
@@ -81,7 +82,7 @@
     
     /* User Color Map variables */
     --bg-main: #FAF6EE;       /* Warm Linen Beige */
-    --bg-card: #FFFFFF;       /* White */
+    --bg-card: #EAF0E8;       /* Soft Greenish-Beige Card */
     --border-color: rgba(130, 194, 92, 0.12);
     
     --text-primary: #2C332A;  /* Formal Dark Olive-grey */
@@ -145,15 +146,15 @@
 }
 
 /* User Specific Card Colors Definitions */
-.card-soft-purple { background-color: #EBE3D5 !important; color: #FFFFFF !important; }
-.card-sky-blue { background-color: #D4C5B9 !important; color: #2C332A !important; }
-.card-mint-green { background-color: #7EE7C4 !important; color: #2C332A !important; }
-.card-peach { background-color: #F8C79A !important; color: #2C332A !important; }
-.card-baby-pink { background-color: #F8B4D9 !important; color: #2C332A !important; }
-.card-white { background-color: #FFFFFF !important; color: #2C332A !important; }
+.card-soft-purple { background-color: #EBE3D5 !important; color: #2C332A !important; }
+.card-sky-blue { background-color: #D3ECD1 !important; color: #2C332A !important; }
+.card-mint-green { background-color: #D3ECD1 !important; color: #2C332A !important; }
+.card-peach { background-color: #EBE3D5 !important; color: #2C332A !important; }
+.card-baby-pink { background-color: #EBE3D5 !important; color: #2C332A !important; }
+.card-white { background-color: #FAF6EE !important; color: #2C332A !important; }
 
 /* Ensure card text overrides fit color accessibility */
-.card-soft-purple *, .card-soft-purple span, .card-soft-purple h3, .card-soft-purple p { color: #FFFFFF !important; }
+.card-soft-purple *, .card-soft-purple span, .card-soft-purple h3, .card-soft-purple p { color: #2C332A !important; }
 .card-sky-blue *, .card-sky-blue span, .card-sky-blue h3, .card-sky-blue p { color: #2C332A !important; }
 .card-mint-green *, .card-mint-green span, .card-mint-green h3, .card-mint-green p { color: #2C332A !important; }
 .card-peach *, .card-peach span, .card-peach h3, .card-peach p { color: #2C332A !important; }
@@ -198,11 +199,11 @@
 /* Active tab button uses linear Dribbble gradient: Royal Blue to Cyan */
 .sidebar-navy nav button.bg-blue-600 {
   background: linear-gradient(135deg, #82C25C 0%, #D3ECD1 100%) !important;
-  color: #FFFFFF !important;
+  color: #2C332A !important;
   box-shadow: 0 4px 15px rgba(130, 194, 92, 0.15) !important;
 }
 .sidebar-navy nav button.bg-blue-600 * {
-  color: #FFFFFF !important;
+  color: #2C332A !important;
 }
 
 /* 🎨 Vibrant specific Platform Brand Gradients (Matches screenshot EXACTLY!) */
@@ -246,44 +247,44 @@
 [class*="category-folder-grad-"] h3, 
 [class*="category-folder-grad-"] span, 
 [class*="category-folder-grad-"] p {
-  color: #FFFFFF !important;
+  color: #2C332A !important;
 }
 
 /* 🏠 Dashboard Custom Layout Card Overrides (Vibrant Medium Shades) */
 .dashboard-add-link {
-  background: linear-gradient(135deg, #82C25C 0%, #CBB6A9 100%) !important; /* Warm Nude Brown to Beige */
+  background: linear-gradient(135deg, #82C25C 0%, #EBE3D5 100%) !important; /* Fresh Green to Beige */
   border: 1px solid #82C25C !important;
-  color: #FFFFFF !important;
+  color: #FAF6EE !important;
 }
 .dashboard-add-link h2, 
 .dashboard-add-link label, 
 .dashboard-add-link span {
-  color: #FFFFFF !important;
+  color: #FAF6EE !important;
 }
 .dashboard-add-link input, 
 .dashboard-add-link select {
-  background-color: rgba(255, 255, 255, 0.9) !important;
+  background-color: rgba(250, 246, 238, 0.9) !important;
   color: #2C332A !important;
-  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  border: 1px solid rgba(130, 194, 92, 0.5) !important;
 }
 .dashboard-add-link input::placeholder {
-  color: rgba(61, 53, 46, 0.6) !important;
+  color: rgba(94, 102, 92, 0.6) !important;
 }
 .dashboard-add-link select option {
-  background-color: #FAF7F2 !important;
+  background-color: #FAF6EE !important;
   color: #2C332A !important;
 }
 .dashboard-add-link button[type="submit"] {
   background: #2C332A !important;
-  color: #FFFFFF !important;
+  color: #FAF6EE !important;
   border: none !important;
 }
 .dashboard-add-link button[type="submit"]:hover {
-  background: #2A2521 !important;
+  background: #1C2219 !important;
 }
 
 .dashboard-missions {
-  background: linear-gradient(135deg, #EBE3D5 0%, #FAF7F2 100%) !important; /* Muted Apricot Nude to Cream */
+  background: linear-gradient(135deg, #EBE3D5 0%, #D3ECD1 100%) !important; /* Beige to Light Green */
   border: 1px solid #EBE3D5 !important;
   color: #2C332A !important;
 }
@@ -294,7 +295,7 @@
 }
 
 .dashboard-quick-stats {
-  background: linear-gradient(135deg, #FAF6EE 0%, rgba(210, 220, 208, 0.15) 100%) !important; /* Oatmeal to Mint Green */
+  background: linear-gradient(135deg, #FAF6EE 0%, rgba(211, 236, 209, 0.15) 100%) !important; /* Oatmeal to Mint Green */
   border: 1px solid #EBE3D5 !important;
 }
 
@@ -329,28 +330,28 @@ p, .text-slate-500, .text-slate-450, .text-slate-400 {
 .glass-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
-  border-color: rgba(122, 143, 117, 0.25) !important;
+  border-color: rgba(130, 194, 92, 0.25) !important;
 }
 
 /* Standard button matches Royal Blue to Indigo */
 .bg-blue-600 {
   background: linear-gradient(135deg, #82C25C 0%, #D3ECD1 100%) !important;
   border: none !important;
-  color: #FFFFFF !important;
+  color: #FAF6EE !important;
 }
 
 .bg-blue-600:hover {
-  background: linear-gradient(135deg, #D3ECD1 0%, #6E7F6B 100%) !important;
+  background: linear-gradient(135deg, #D3ECD1 0%, #6CA64A 100%) !important;
 }
 
 /* Neumorphic adjustments */
 .neumorphic-inset {
-  box-shadow: inset 2px 2px 5px rgba(47, 54, 46, 0.03), inset -2px -2px 5px rgba(230, 223, 211, 0.7);
+  box-shadow: inset 2px 2px 5px rgba(44, 51, 42, 0.03), inset -2px -2px 5px rgba(230, 223, 211, 0.7);
 }
 
 /* Glow details */
 .glow-primary {
-  box-shadow: 0 0 24px rgba(122, 143, 117, 0.15);
+  box-shadow: 0 0 24px rgba(130, 194, 92, 0.15);
 }
 
 /* Custom Scrollbars */
