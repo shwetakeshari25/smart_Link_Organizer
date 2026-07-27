@@ -3,21 +3,21 @@
 
 @theme {
   /* Define Tailwind overrides with User's custom hex values */
-  --color-blue-50: rgba(163, 143, 133, 0.05);
-  --color-blue-100: rgba(163, 143, 133, 0.1);
-  --color-blue-500: #A38F85; /* Warm Nude Brown */
-  --color-blue-600: #A38F85; /* Warm Nude Brown */
-  --color-blue-700: #D7C4B7; /* Soft Nude Beige */
+  --color-blue-50: rgba(122, 143, 117, 0.05);
+  --color-blue-100: rgba(122, 143, 117, 0.1);
+  --color-blue-500: #7A8F75; /* Sage Green */
+  --color-blue-600: #7A8F75; /* Sage Green */
+  --color-blue-700: #6E7F6B; /* Muted Sage */
   
-  --color-teal-500: #A38F85;
-  --color-teal-650: #CBB6A9;
+  --color-teal-500: #7A8F75;
+  --color-teal-650: #6A7C66;
   
-  --color-pink-500: #EAD2C3; /* Muted Rose Nude */
-  --color-pink-650: #D0B8A8;
+  --color-pink-500: #E6DFD3; /* Beige Tan */
+  --color-pink-650: #D6CEBE;
   
-  --color-yellow-500: #FFFDF2; /* Pale Butter Cream */
-  --color-purple-500: #A38F85;
-  --color-indigo-500: #D7C4B7;
+  --color-yellow-500: #FAF8F5; /* Oatmeal Cream */
+  --color-purple-500: #7A8F75;
+  --color-indigo-500: #D2DCD0;
 }
 
 @layer base {
@@ -26,53 +26,53 @@
     --font-body: 'Inter', sans-serif;
     
     /* User Color Map variables */
-    --bg-main: #FAF7F2;       /* Warm Sand Cream */
+    --bg-main: #FAF8F5;       /* Warm Sand Beige */
     --bg-card: #FFFFFF;       /* White */
-    --border-color: rgba(163, 143, 133, 0.12);
+    --border-color: rgba(122, 143, 117, 0.12);
     
-    --text-primary: #3D352E;  /* Formal Dark Espresso */
-    --text-secondary: #8A7E72; /* Siltstone Taupe */
+    --text-primary: #2F362E;  /* Formal Dark Forest Espresso */
+    --text-secondary: #6E7A6C; /* Muted Olive/Sage Gray */
     
-    --text-muted: #BDB2A6;
+    --text-muted: #BAB3A6;
     
-    --royal-blue: #A38F85;
-    --indigo: #D7C4B7;
-    --soft-purple: #EAD2C3;
-    --lavender: #FFFDF2;
-    --sky-blue: #D7C4B7;
-    --cyan: #FAF7F2;
-    --aqua: #A38F85;
-    --mint-green: #D7C4B7;
-    --soft-green: #EAD2C3;
-    --peach: #FFFDF2;
-    --coral-pink: #A38F85;
-    --baby-pink: #FAF7F2;
-    --light-lilac: #D7C4B7;
+    --royal-blue: #7A8F75;
+    --indigo: #D2DCD0;
+    --soft-purple: #E6DFD3;
+    --lavender: #FAF8F5;
+    --sky-blue: #D2DCD0;
+    --cyan: #FAF8F5;
+    --aqua: #7A8F75;
+    --mint-green: #D2DCD0;
+    --soft-green: #E6DFD3;
+    --peach: #FAF8F5;
+    --coral-pink: #7A8F75;
+    --baby-pink: #FAF8F5;
+    --light-lilac: #D2DCD0;
     
-    --shadow-sm: 0 4px 14px rgba(61, 53, 46, 0.03);
-    --shadow-md: 0 12px 36px rgba(61, 53, 46, 0.05), 0 4px 12px rgba(0, 0, 0, 0.01);
-    --shadow-lg: 0 24px 60px rgba(163, 143, 133, 0.08), 0 8px 24px rgba(61, 53, 46, 0.02);
+    --shadow-sm: 0 4px 14px rgba(47, 54, 46, 0.03);
+    --shadow-md: 0 12px 36px rgba(47, 54, 46, 0.05), 0 4px 12px rgba(0, 0, 0, 0.01);
+    --shadow-lg: 0 24px 60px rgba(122, 143, 117, 0.08), 0 8px 24px rgba(47, 54, 46, 0.02);
     --glass-blur: 16px;
   }
 
   .dark {
     /* Keep dark mode clean with custom accents */
-    --bg-main: #191614;
-    --bg-card: rgba(38, 33, 30, 0.9);
+    --bg-main: #151814;
+    --bg-card: rgba(32, 38, 30, 0.9);
     --border-color: rgba(255, 255, 255, 0.08);
     
-    --text-primary: #FAF7F2;
-    --text-secondary: #EAD2C3;
-    --text-muted: #8A7E72;
+    --text-primary: #FAF8F5;
+    --text-secondary: #E6DFD3;
+    --text-muted: #6E7A6C;
   }
   
   body {
     background-color: var(--bg-main);
     background-image: 
-      radial-gradient(at 0% 0%, rgba(215, 196, 183, 0.35) 0px, transparent 60%),       /* Soft Nude */
-      radial-gradient(at 100% 100%, rgba(163, 143, 133, 0.25) 0px, transparent 60%),   /* Warm Sand */
-      radial-gradient(at 50% 0%, rgba(245, 239, 235, 0.5) 0px, transparent 60%),      /* Pale Cream */
-      linear-gradient(135deg, #FFFDFB 0%, #FAF7F2 100%);
+      radial-gradient(at 0% 0%, rgba(210, 220, 208, 0.35) 0px, transparent 60%),       /* Light Sage */
+      radial-gradient(at 100% 100%, rgba(122, 143, 117, 0.25) 0px, transparent 60%),   /* Muted Sage */
+      radial-gradient(at 50% 0%, rgba(247, 245, 240, 0.5) 0px, transparent 60%),      /* Oatmeal */
+      linear-gradient(135deg, #FFFDFB 0%, #FAF8F5 100%);
     background-attachment: fixed;
     color: var(--text-primary);
     font-family: var(--font-body);
@@ -83,98 +83,98 @@
   .dark body {
     background-color: var(--bg-main);
     background-image: 
-      radial-gradient(at 0% 0%, rgba(163, 143, 133, 0.15) 0px, transparent 65%), 
-      radial-gradient(at 100% 100%, rgba(215, 196, 183, 0.12) 0px, transparent 65%),
-      linear-gradient(135deg, #2A2521 0%, #191614 100%);
+      radial-gradient(at 0% 0%, rgba(122, 143, 117, 0.15) 0px, transparent 65%), 
+      radial-gradient(at 100% 100%, rgba(210, 220, 208, 0.12) 0px, transparent 65%),
+      linear-gradient(135deg, #222621 0%, #151814 100%);
     background-attachment: fixed;
   }
 }
 
 /* User Specific Card Colors Definitions */
-.card-soft-purple { background-color: #EAD2C3 !important; color: #FFFFFF !important; }
-.card-sky-blue { background-color: #D4C5B9 !important; color: #3D352E !important; }
-.card-mint-green { background-color: #7EE7C4 !important; color: #3D352E !important; }
-.card-peach { background-color: #F8C79A !important; color: #3D352E !important; }
-.card-baby-pink { background-color: #F8B4D9 !important; color: #3D352E !important; }
-.card-white { background-color: #FFFFFF !important; color: #3D352E !important; }
+.card-soft-purple { background-color: #E6DFD3 !important; color: #FFFFFF !important; }
+.card-sky-blue { background-color: #D4C5B9 !important; color: #2F362E !important; }
+.card-mint-green { background-color: #7EE7C4 !important; color: #2F362E !important; }
+.card-peach { background-color: #F8C79A !important; color: #2F362E !important; }
+.card-baby-pink { background-color: #F8B4D9 !important; color: #2F362E !important; }
+.card-white { background-color: #FFFFFF !important; color: #2F362E !important; }
 
 /* Ensure card text overrides fit color accessibility */
 .card-soft-purple *, .card-soft-purple span, .card-soft-purple h3, .card-soft-purple p { color: #FFFFFF !important; }
-.card-sky-blue *, .card-sky-blue span, .card-sky-blue h3, .card-sky-blue p { color: #3D352E !important; }
-.card-mint-green *, .card-mint-green span, .card-mint-green h3, .card-mint-green p { color: #3D352E !important; }
-.card-peach *, .card-peach span, .card-peach h3, .card-peach p { color: #3D352E !important; }
-.card-baby-pink *, .card-baby-pink span, .card-baby-pink h3, .card-baby-pink p { color: #3D352E !important; }
+.card-sky-blue *, .card-sky-blue span, .card-sky-blue h3, .card-sky-blue p { color: #2F362E !important; }
+.card-mint-green *, .card-mint-green span, .card-mint-green h3, .card-mint-green p { color: #2F362E !important; }
+.card-peach *, .card-peach span, .card-peach h3, .card-peach p { color: #2F362E !important; }
+.card-baby-pink *, .card-baby-pink span, .card-baby-pink h3, .card-baby-pink p { color: #2F362E !important; }
 
 /* Glassmorphic Sidebar Theme using User Colors */
 .sidebar-navy {
   background-color: rgba(255, 255, 255, 0.95) !important;
-  color: #3D352E !important; /* Siltstone Espresso */
-  border-right: 1px solid rgba(204, 162, 90, 0.12) !important;
-  box-shadow: 4px 0 24px rgba(48, 44, 38, 0.02) !important;
+  color: #2F362E !important; /* Sage Dark Espresso */
+  border-right: 1px solid rgba(122, 143, 117, 0.12) !important;
+  box-shadow: 4px 0 24px rgba(47, 54, 46, 0.02) !important;
 }
 
 .dark .sidebar-navy {
-  background-color: rgba(38, 35, 28, 0.95) !important;
-  color: #FFFDF5 !important;
+  background-color: rgba(32, 38, 30, 0.95) !important;
+  color: #FAF8F5 !important;
   border-right: 1px solid rgba(255, 255, 255, 0.06) !important;
 }
 
 .sidebar-navy span, .sidebar-navy button {
-  color: #3D352E !important;
+  color: #2F362E !important;
 }
 
 .dark .sidebar-navy span, .dark .sidebar-navy button {
-  color: #FFFDF5 !important;
+  color: #FAF8F5 !important;
 }
 
 .sidebar-navy nav button {
-  color: #70665A !important; /* Siltstone Taupe */
+  color: #6E7A6C !important; /* Sage Olive Gray */
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .dark .sidebar-navy nav button {
-  color: #FFF5B8 !important; /* Siltstone Pale Cream */
+  color: #E6DFD3 !important; /* Beige Tan */
 }
 
 .sidebar-navy nav button:hover {
-  background-color: rgba(204, 162, 90, 0.05) !important;
-  color: #A38F85 !important; /* Ochre Gold */
+  background-color: rgba(122, 143, 117, 0.05) !important;
+  color: #7A8F75 !important; /* Sage Green */
 }
 
 /* Active tab button uses linear Dribbble gradient: Royal Blue to Cyan */
 .sidebar-navy nav button.bg-blue-600 {
-  background: linear-gradient(135deg, #A38F85 0%, #D7C4B7 100%) !important;
+  background: linear-gradient(135deg, #7A8F75 0%, #D2DCD0 100%) !important;
   color: #FFFFFF !important;
-  box-shadow: 0 4px 15px rgba(204, 162, 90, 0.15) !important;
+  box-shadow: 0 4px 15px rgba(122, 143, 117, 0.15) !important;
 }
 .sidebar-navy nav button.bg-blue-600 * {
   color: #FFFFFF !important;
 }
 
 /* 🎨 Vibrant specific Platform Brand Gradients (Matches screenshot EXACTLY!) */
-.category-folder-YouTube { background: linear-gradient(135deg, #ECC8AF 0%, #D4A373 100%) !important; } /* Warm nude apricot */
-.category-folder-Instagram { background: linear-gradient(135deg, #D7B59F 0%, #B58263 100%) !important; } /* Desert rose nude */
-.category-folder-LinkedIn { background: linear-gradient(135deg, #D6C2B0 0%, #A9907E 100%) !important; } /* Warm taupe nude */
-.category-folder-GitHub { background: linear-gradient(135deg, #C2B09F 0%, #8F7664 100%) !important; } /* Cool clay nude */
-.category-folder-TwitterX { background: linear-gradient(135deg, #E2CFC0 0%, #B89C86 100%) !important; } /* Soft sand nude */
-.category-folder-Facebook { background: linear-gradient(135deg, #D0B8A8 0%, #9A7E6F 100%) !important; } /* English leather nude */
-.category-folder-Reddit { background: linear-gradient(135deg, #DFD3C3 0%, #C7B198 100%) !important; } /* Parchment nude */
-.category-folder-Medium { background: linear-gradient(135deg, #F0E5D8 0%, #D8C3A5 100%) !important; } /* Butter cream nude */
-.category-folder-Devto { background: linear-gradient(135deg, #E6D5C3 0%, #BCA896 100%) !important; } /* Earthy dust nude */
-.category-folder-PersonalWebsite { background: linear-gradient(135deg, #D8C8B8 0%, #9F8A78 100%) !important; } /* Deep clay nude */
-.category-folder-Other { background: linear-gradient(135deg, #ECC8AF 0%, #C4A48A 100%) !important; } /* Latte nude */
+.category-folder-YouTube { background: linear-gradient(135deg, #D4DEC7 0%, #A2B29F 100%) !important; } /* Warm sage */
+.category-folder-Instagram { background: linear-gradient(135deg, #EAE7DC 0%, #D8C3A5 100%) !important; } /* Warm sand-beige */
+.category-folder-LinkedIn { background: linear-gradient(135deg, #C2C5AA 0%, #8F9779 100%) !important; } /* Olive-sage */
+.category-folder-GitHub { background: linear-gradient(135deg, #E6E1C4 0%, #B8B08D 100%) !important; } /* Beige-tan */
+.category-folder-TwitterX { background: linear-gradient(135deg, #D2DCD0 0%, #9FB29B 100%) !important; } /* Mint-sage */
+.category-folder-Facebook { background: linear-gradient(135deg, #DFD3C3 0%, #B5A08C 100%) !important; } /* Tan-beige */
+.category-folder-Reddit { background: linear-gradient(135deg, #E3E7D3 0%, #B9C29D 100%) !important; } /* Light green-sage */
+.category-folder-Medium { background: linear-gradient(135deg, #F0EAD6 0%, #D2C8A6 100%) !important; } /* Butter-cream beige */
+.category-folder-Devto { background: linear-gradient(135deg, #D7DCD3 0%, #A3B899 100%) !important; } /* Dusty sage-green */
+.category-folder-PersonalWebsite { background: linear-gradient(135deg, #EAE3D2 0%, #BCA886 100%) !important; } /* Deep clay nude */
+.category-folder-Other { background: linear-gradient(135deg, #CBD5C0 0%, #9EB28F 100%) !important; } /* Earth green-sage */
 
 /* 🎨 Vibrant Folder Cards Gradients for custom folders (index-based) */
-.category-folder-grad-0 { background: linear-gradient(135deg, #ECC8AF 0%, #D4A373 100%) !important; }
-.category-folder-grad-1 { background: linear-gradient(135deg, #D7B59F 0%, #B58263 100%) !important; }
-.category-folder-grad-2 { background: linear-gradient(135deg, #D6C2B0 0%, #A9907E 100%) !important; }
-.category-folder-grad-3 { background: linear-gradient(135deg, #C2B09F 0%, #8F7664 100%) !important; }
-.category-folder-grad-4 { background: linear-gradient(135deg, #E2CFC0 0%, #B89C86 100%) !important; }
-.category-folder-grad-5 { background: linear-gradient(135deg, #D0B8A8 0%, #9A7E6F 100%) !important; }
-.category-folder-grad-6 { background: linear-gradient(135deg, #DFD3C3 0%, #C7B198 100%) !important; }
-.category-folder-grad-7 { background: linear-gradient(135deg, #F0E5D8 0%, #D8C3A5 100%) !important; }
-.category-folder-grad-8 { background: linear-gradient(135deg, #E6D5C3 0%, #BCA896 100%) !important; }
-.category-folder-grad-9 { background: linear-gradient(135deg, #D8C8B8 0%, #9F8A78 100%) !important; }
+.category-folder-grad-0 { background: linear-gradient(135deg, #D4DEC7 0%, #A2B29F 100%) !important; }
+.category-folder-grad-1 { background: linear-gradient(135deg, #EAE7DC 0%, #D8C3A5 100%) !important; }
+.category-folder-grad-2 { background: linear-gradient(135deg, #C2C5AA 0%, #8F9779 100%) !important; }
+.category-folder-grad-3 { background: linear-gradient(135deg, #E6E1C4 0%, #B8B08D 100%) !important; }
+.category-folder-grad-4 { background: linear-gradient(135deg, #D2DCD0 0%, #9FB29B 100%) !important; }
+.category-folder-grad-5 { background: linear-gradient(135deg, #DFD3C3 0%, #B5A08C 100%) !important; }
+.category-folder-grad-6 { background: linear-gradient(135deg, #E3E7D3 0%, #B9C29D 100%) !important; }
+.category-folder-grad-7 { background: linear-gradient(135deg, #F0EAD6 0%, #D2C8A6 100%) !important; }
+.category-folder-grad-8 { background: linear-gradient(135deg, #D7DCD3 0%, #A3B899 100%) !important; }
+.category-folder-grad-9 { background: linear-gradient(135deg, #EAE3D2 0%, #BCA886 100%) !important; }
 
 /* Apply transitions and hover effects directly to folder containers */
 [class*="category-folder-"], [class*="category-folder-grad-"] {
@@ -197,8 +197,8 @@
 
 /* 🏠 Dashboard Custom Layout Card Overrides (Vibrant Medium Shades) */
 .dashboard-add-link {
-  background: linear-gradient(135deg, #A38F85 0%, #CBB6A9 100%) !important; /* Warm Nude Brown to Beige */
-  border: 1px solid #A38F85 !important;
+  background: linear-gradient(135deg, #7A8F75 0%, #CBB6A9 100%) !important; /* Warm Nude Brown to Beige */
+  border: 1px solid #7A8F75 !important;
   color: #FFFFFF !important;
 }
 .dashboard-add-link h2, 
@@ -209,7 +209,7 @@
 .dashboard-add-link input, 
 .dashboard-add-link select {
   background-color: rgba(255, 255, 255, 0.9) !important;
-  color: #3D352E !important;
+  color: #2F362E !important;
   border: 1px solid rgba(255, 255, 255, 0.5) !important;
 }
 .dashboard-add-link input::placeholder {
@@ -217,10 +217,10 @@
 }
 .dashboard-add-link select option {
   background-color: #FAF7F2 !important;
-  color: #3D352E !important;
+  color: #2F362E !important;
 }
 .dashboard-add-link button[type="submit"] {
-  background: #3D352E !important;
+  background: #2F362E !important;
   color: #FFFFFF !important;
   border: none !important;
 }
@@ -229,29 +229,29 @@
 }
 
 .dashboard-missions {
-  background: linear-gradient(135deg, #EAD2C3 0%, #FAF7F2 100%) !important; /* Muted Apricot Nude to Cream */
-  border: 1px solid #EAD2C3 !important;
-  color: #3D352E !important;
+  background: linear-gradient(135deg, #E6DFD3 0%, #FAF7F2 100%) !important; /* Muted Apricot Nude to Cream */
+  border: 1px solid #E6DFD3 !important;
+  color: #2F362E !important;
 }
 .dashboard-missions h2, 
 .dashboard-missions span, 
 .dashboard-missions button {
-  color: #3D352E !important;
+  color: #2F362E !important;
 }
 
 .dashboard-quick-stats {
-  background: linear-gradient(135deg, #FFF5B8 0%, rgba(255, 177, 110, 0.15) 100%) !important; /* Cream to Apricot */
-  border: 1px solid #EAD2C3 !important;
+  background: linear-gradient(135deg, #FAF8F5 0%, rgba(210, 220, 208, 0.15) 100%) !important; /* Oatmeal to Mint Green */
+  border: 1px solid #E6DFD3 !important;
 }
 
 /* Global typography definitions based on User Specifications */
 h1, h2, h3, h4, h5, h6, 
 .text-slate-800, .text-slate-700, .text-slate-650 {
-  color: #3D352E !important; /* Formal Siltstone Espresso text */
+  color: #2F362E !important; /* Formal Sage Dark Espresso text */
 }
 
 p, .text-slate-500, .text-slate-450, .text-slate-400 {
-  color: #70665A !important; /* Siltstone Taupe text */
+  color: #6E7A6C !important; /* Sage Olive Gray text */
 }
 
 /* Glassmorphism styling utilities */
@@ -275,28 +275,28 @@ p, .text-slate-500, .text-slate-450, .text-slate-400 {
 .glass-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
-  border-color: rgba(204, 162, 90, 0.25) !important;
+  border-color: rgba(122, 143, 117, 0.25) !important;
 }
 
 /* Standard button matches Royal Blue to Indigo */
 .bg-blue-600 {
-  background: linear-gradient(135deg, #A38F85 0%, #D7C4B7 100%) !important;
+  background: linear-gradient(135deg, #7A8F75 0%, #D2DCD0 100%) !important;
   border: none !important;
   color: #FFFFFF !important;
 }
 
 .bg-blue-600:hover {
-  background: linear-gradient(135deg, #D7C4B7 0%, #BCA06B 100%) !important;
+  background: linear-gradient(135deg, #D2DCD0 0%, #6E7F6B 100%) !important;
 }
 
 /* Neumorphic adjustments */
 .neumorphic-inset {
-  box-shadow: inset 2px 2px 5px rgba(48, 44, 38, 0.03), inset -2px -2px 5px rgba(255, 245, 184, 0.7);
+  box-shadow: inset 2px 2px 5px rgba(47, 54, 46, 0.03), inset -2px -2px 5px rgba(230, 223, 211, 0.7);
 }
 
 /* Glow details */
 .glow-primary {
-  box-shadow: 0 0 24px rgba(204, 162, 90, 0.15);
+  box-shadow: 0 0 24px rgba(122, 143, 117, 0.15);
 }
 
 /* Custom Scrollbars */
