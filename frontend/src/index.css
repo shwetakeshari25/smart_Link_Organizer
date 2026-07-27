@@ -2,12 +2,37 @@
 @import "tailwindcss";
 
 @theme {
-  /* Define Tailwind overrides with User's custom hex values */
+  /* Define Tailwind overrides to enforce 100% Beige & Light Green palette across all views */
   --color-blue-50: rgba(130, 194, 92, 0.05);
   --color-blue-100: rgba(130, 194, 92, 0.1);
+  --color-blue-200: #D3ECD1;
+  --color-blue-350: #A8DE9B;
   --color-blue-500: #82C25C; /* Fresh Light Green */
   --color-blue-600: #82C25C; /* Fresh Light Green */
   --color-blue-700: #6CA64A; /* Fresh Green Dark */
+  
+  --color-indigo-50: #FAF6EE;
+  --color-indigo-100: #EBE3D5;
+  --color-indigo-200: #D3ECD1;
+  --color-indigo-500: #82C25C;
+  --color-indigo-600: #74B051;
+  
+  --color-purple-50: #FAF6EE;
+  --color-purple-100: #EBE3D5;
+  --color-purple-200: #D3ECD1;
+  --color-purple-500: #82C25C;
+  --color-purple-600: #74B051;
+  
+  --color-violet-50: #FAF6EE;
+  --color-violet-100: #EBE3D5;
+  --color-violet-200: #D3ECD1;
+  --color-violet-500: #82C25C;
+  --color-violet-600: #74B051;
+  
+  --color-emerald-50: #FAF6EE;
+  --color-emerald-100: #EBE3D5;
+  --color-emerald-500: #82C25C;
+  --color-emerald-600: #74B051;
   
   --color-teal-500: #82C25C;
   --color-teal-650: #74B051;
@@ -16,8 +41,37 @@
   --color-pink-650: #D2C4B1;
   
   --color-yellow-500: #FAF6EE; /* Linen Beige */
-  --color-purple-500: #82C25C;
-  --color-indigo-500: #D3ECD1;
+  
+  --color-slate-50: #FAF8F5;
+  --color-slate-100: #FAF6EE;
+  --color-slate-200: #EBE3D5;
+  --color-slate-300: #D8D2C4;
+  --color-slate-400: #BAB1A1;
+  --color-slate-500: #5E665C;
+  --color-slate-650: #5E665C;
+  --color-slate-700: #5E665C;
+  --color-slate-800: #2C332A;
+  --color-slate-900: #2C332A;
+  
+  --color-zinc-50: #FAF8F5;
+  --color-zinc-100: #FAF6EE;
+  --color-zinc-200: #EBE3D5;
+  --color-zinc-350: #BAB1A1;
+  --color-zinc-500: #5E665C;
+  --color-zinc-800: #2C332A;
+  
+  --color-gray-50: #FAF8F5;
+  --color-gray-100: #FAF6EE;
+  --color-gray-200: #EBE3D5;
+  --color-gray-500: #5E665C;
+  --color-gray-850: #1C2219;
+  --color-gray-900: #2C332A;
+  
+  --color-neutral-50: #FAF8F5;
+  --color-neutral-100: #FAF6EE;
+  --color-neutral-200: #EBE3D5;
+  --color-neutral-500: #5E665C;
+  --color-neutral-800: #2C332A;
 }
 
 @layer base {
