@@ -3,76 +3,76 @@
 
 @theme {
   /* Define Tailwind overrides to enforce 100% Beige & Light Green palette across all views */
-  --color-blue-50: rgba(130, 194, 92, 0.05);
-  --color-blue-100: rgba(130, 194, 92, 0.1);
-  --color-blue-200: #D3ECD1;
-  --color-blue-350: #A8DE9B;
-  --color-blue-500: #82C25C; /* Fresh Light Green */
-  --color-blue-600: #82C25C; /* Fresh Light Green */
-  --color-blue-700: #6CA64A; /* Fresh Green Dark */
+  --color-blue-50: rgba(78, 135, 82, 0.05);
+  --color-blue-100: rgba(78, 135, 82, 0.1);
+  --color-blue-200: #B0DCAE;
+  --color-blue-350: #90C592;
+  --color-blue-500: #4E8752; /* Fresh Light Green */
+  --color-blue-600: #4E8752; /* Fresh Light Green */
+  --color-blue-700: #2E5A35; /* Fresh Green Dark */
   
-  --color-indigo-50: #FAF6EE;
-  --color-indigo-100: #EBE3D5;
-  --color-indigo-200: #D3ECD1;
-  --color-indigo-500: #82C25C;
-  --color-indigo-600: #74B051;
+  --color-indigo-50: #FFF8E7;
+  --color-indigo-100: #F1E9D2;
+  --color-indigo-200: #B0DCAE;
+  --color-indigo-500: #4E8752;
+  --color-indigo-600: #2E5A35;
   
-  --color-purple-50: #FAF6EE;
-  --color-purple-100: #EBE3D5;
-  --color-purple-200: #D3ECD1;
-  --color-purple-500: #82C25C;
-  --color-purple-600: #74B051;
+  --color-purple-50: #FFF8E7;
+  --color-purple-100: #EED9C4;
+  --color-purple-200: #FFE4C4;
+  --color-purple-500: #C19A6B;
+  --color-purple-600: #A67B5B;
   
-  --color-violet-50: #FAF6EE;
-  --color-violet-100: #EBE3D5;
-  --color-violet-200: #D3ECD1;
-  --color-violet-500: #82C25C;
-  --color-violet-600: #74B051;
+  --color-violet-50: #FFF8E7;
+  --color-violet-100: #F1E9D2;
+  --color-violet-200: #B0DCAE;
+  --color-violet-500: #4E8752;
+  --color-violet-600: #2E5A35;
   
-  --color-emerald-50: #FAF6EE;
-  --color-emerald-100: #EBE3D5;
-  --color-emerald-500: #82C25C;
-  --color-emerald-600: #74B051;
+  --color-emerald-50: #FFF8E7;
+  --color-emerald-100: #EED9C4;
+  --color-emerald-500: #4E8752;
+  --color-emerald-600: #2E5A35;
   
-  --color-teal-500: #82C25C;
-  --color-teal-650: #74B051;
+  --color-teal-500: #4E8752;
+  --color-teal-650: #2E5A35;
   
-  --color-pink-500: #EBE3D5; /* Warm Beige Oatmeal */
-  --color-pink-650: #D2C4B1;
+  --color-pink-500: #EED9C4; /* Warm Beige Oatmeal */
+  --color-pink-650: #A67B5B;
   
-  --color-yellow-500: #FAF6EE; /* Linen Beige */
+  --color-yellow-500: #FFF8E7; /* Linen Beige */
   
-  --color-slate-50: #FAF8F5;
-  --color-slate-100: #FAF6EE;
-  --color-slate-200: #EBE3D5;
-  --color-slate-300: #D8D2C4;
-  --color-slate-400: #BAB1A1;
-  --color-slate-500: #5E665C;
-  --color-slate-650: #5E665C;
-  --color-slate-700: #5E665C;
-  --color-slate-800: #2C332A;
-  --color-slate-900: #2C332A;
+  --color-slate-50: #FFF8E7;
+  --color-slate-100: #FFF8E7;
+  --color-slate-200: #EED9C4;
+  --color-slate-300: #EDC9AF;
+  --color-slate-400: #C3B091;
+  --color-slate-500: #A67B5B;
+  --color-slate-650: #967859;
+  --color-slate-700: #967859;
+  --color-slate-800: #143019;
+  --color-slate-900: #143019;
   
-  --color-zinc-50: #FAF8F5;
-  --color-zinc-100: #FAF6EE;
-  --color-zinc-200: #EBE3D5;
-  --color-zinc-350: #BAB1A1;
-  --color-zinc-500: #5E665C;
-  --color-zinc-800: #2C332A;
+  --color-zinc-50: #FFF8E7;
+  --color-zinc-100: #FFF8E7;
+  --color-zinc-200: #EED9C4;
+  --color-zinc-350: #C3B091;
+  --color-zinc-500: #A67B5B;
+  --color-zinc-800: #143019;
   
-  --color-gray-50: #FAF8F5;
-  --color-gray-100: #FAF6EE;
-  --color-gray-200: #EBE3D5;
-  --color-gray-500: #5E665C;
-  --color-gray-850: #1C2219;
-  --color-gray-900: #2C332A;
+  --color-gray-50: #FFF8E7;
+  --color-gray-100: #FFF8E7;
+  --color-gray-200: #EED9C4;
+  --color-gray-500: #A67B5B;
+  --color-gray-850: #143019;
+  --color-gray-900: #143019;
   
-  --color-neutral-50: #FAF8F5;
-  --color-neutral-100: #FAF6EE;
-  --color-neutral-200: #EBE3D5;
-  --color-neutral-500: #5E665C;
-  --color-neutral-800: #2C332A;
-  --color-white: #FAF6EE; /* Override pure white with Linen Beige */
+  --color-neutral-50: #FFF8E7;
+  --color-neutral-100: #FFF8E7;
+  --color-neutral-200: #EED9C4;
+  --color-neutral-500: #A67B5B;
+  --color-neutral-800: #143019;
+  --color-white: #FFF8E7; /* Override pure white with Cosmic Latte */
 }
 
 @layer base {
@@ -81,32 +81,32 @@
     --font-body: 'Inter', sans-serif;
     
     /* User Color Map variables */
-    --bg-main: #FAF6EE;       /* Warm Linen Beige */
-    --bg-card: #EAF0E8;       /* Soft Greenish-Beige Card */
-    --border-color: rgba(130, 194, 92, 0.12);
+    --bg-main: #FFF8E7;       /* Cosmic Latte Beige */
+    --bg-card: #F1E9D2;       /* Parchment Beige Card */
+    --border-color: rgba(78, 135, 82, 0.12);
     
-    --text-primary: #2C332A;  /* Formal Dark Olive-grey */
-    --text-secondary: #5E665C; /* Muted Sage Gray text */
+    --text-primary: #143019;  /* Dark Forest Green */
+    --text-secondary: #4E8752; /* Leaf Green text */
     
-    --text-muted: #BAB1A1;
+    --text-muted: #C3B091;
     
-    --royal-blue: #82C25C;
-    --indigo: #D3ECD1;
-    --soft-purple: #EBE3D5;
-    --lavender: #FAF6EE;
-    --sky-blue: #D3ECD1;
-    --cyan: #FAF6EE;
-    --aqua: #82C25C;
-    --mint-green: #D3ECD1;
-    --soft-green: #EBE3D5;
-    --peach: #FAF6EE;
-    --coral-pink: #82C25C;
-    --baby-pink: #FAF6EE;
-    --light-lilac: #D3ECD1;
+    --royal-blue: #4E8752;
+    --indigo: #B0DCAE;
+    --soft-purple: #EED9C4;
+    --lavender: #FFF8E7;
+    --sky-blue: #B0DCAE;
+    --cyan: #FFF8E7;
+    --aqua: #4E8752;
+    --mint-green: #B0DCAE;
+    --soft-green: #EED9C4;
+    --peach: #FFF8E7;
+    --coral-pink: #4E8752;
+    --baby-pink: #FFF8E7;
+    --light-lilac: #B0DCAE;
     
-    --shadow-sm: 0 4px 14px rgba(44, 51, 42, 0.03);
-    --shadow-md: 0 12px 36px rgba(44, 51, 42, 0.05), 0 4px 12px rgba(0, 0, 0, 0.01);
-    --shadow-lg: 0 24px 60px rgba(130, 194, 92, 0.08), 0 8px 24px rgba(44, 51, 42, 0.02);
+    --shadow-sm: 0 4px 14px rgba(20, 48, 25, 0.03);
+    --shadow-md: 0 12px 36px rgba(20, 48, 25, 0.05), 0 4px 12px rgba(0, 0, 0, 0.01);
+    --shadow-lg: 0 24px 60px rgba(78, 135, 82, 0.08), 0 8px 24px rgba(20, 48, 25, 0.02);
     --glass-blur: 16px;
   }
 
@@ -116,18 +116,18 @@
     --bg-card: rgba(26, 32, 24, 0.9);
     --border-color: rgba(255, 255, 255, 0.08);
     
-    --text-primary: #FAF6EE;
-    --text-secondary: #EBE3D5;
-    --text-muted: #5E665C;
+    --text-primary: #FFF8E7;
+    --text-secondary: #EED9C4;
+    --text-muted: #4E8752;
   }
   
   body {
     background-color: var(--bg-main);
     background-image: 
-      radial-gradient(at 0% 0%, rgba(211, 236, 209, 0.35) 0px, transparent 60%),       /* Fresh Green glow */
-      radial-gradient(at 100% 100%, rgba(130, 194, 92, 0.2) 0px, transparent 60%),     /* Muted Green */
-      radial-gradient(at 50% 0%, rgba(235, 227, 213, 0.5) 0px, transparent 60%),      /* Beige glow */
-      linear-gradient(135deg, #FFFDF9 0%, #FAF6EE 100%);
+      radial-gradient(at 0% 0%, rgba(176, 220, 174, 0.35) 0px, transparent 60%),       /* Pale Green glow */
+      radial-gradient(at 100% 100%, rgba(78, 135, 82, 0.2) 0px, transparent 60%),     /* Medium Leaf Green */
+      radial-gradient(at 50% 0%, rgba(241, 233, 210, 0.5) 0px, transparent 60%),      /* Parchment glow */
+      linear-gradient(135deg, #FFF8E7 0%, #FAF0D9 100%);
     background-attachment: fixed;
     color: var(--text-primary);
     font-family: var(--font-body);
@@ -138,48 +138,48 @@
   .dark body {
     background-color: var(--bg-main);
     background-image: 
-      radial-gradient(at 0% 0%, rgba(130, 194, 92, 0.15) 0px, transparent 65%), 
-      radial-gradient(at 100% 100%, rgba(211, 236, 209, 0.12) 0px, transparent 65%),
+      radial-gradient(at 0% 0%, rgba(78, 135, 82, 0.15) 0px, transparent 65%), 
+      radial-gradient(at 100% 100%, rgba(176, 220, 174, 0.12) 0px, transparent 65%),
       linear-gradient(135deg, #1C2219 0%, #10140F 100%);
     background-attachment: fixed;
   }
 }
 
 /* User Specific Card Colors Definitions */
-.card-soft-purple { background-color: #EBE3D5 !important; color: #2C332A !important; }
-.card-sky-blue { background-color: #D3ECD1 !important; color: #2C332A !important; }
-.card-mint-green { background-color: #D3ECD1 !important; color: #2C332A !important; }
-.card-peach { background-color: #EBE3D5 !important; color: #2C332A !important; }
-.card-baby-pink { background-color: #EBE3D5 !important; color: #2C332A !important; }
-.card-white { background-color: #FAF6EE !important; color: #2C332A !important; }
+.card-soft-purple { background-color: #EED9C4 !important; color: #143019 !important; }
+.card-sky-blue { background-color: #B0DCAE !important; color: #143019 !important; }
+.card-mint-green { background-color: #B0DCAE !important; color: #143019 !important; }
+.card-peach { background-color: #EED9C4 !important; color: #143019 !important; }
+.card-baby-pink { background-color: #EED9C4 !important; color: #143019 !important; }
+.card-white { background-color: #FFF8E7 !important; color: #143019 !important; }
 
 /* Ensure card text overrides fit color accessibility */
-.card-soft-purple *, .card-soft-purple span, .card-soft-purple h3, .card-soft-purple p { color: #2C332A !important; }
-.card-sky-blue *, .card-sky-blue span, .card-sky-blue h3, .card-sky-blue p { color: #2C332A !important; }
-.card-mint-green *, .card-mint-green span, .card-mint-green h3, .card-mint-green p { color: #2C332A !important; }
-.card-peach *, .card-peach span, .card-peach h3, .card-peach p { color: #2C332A !important; }
-.card-baby-pink *, .card-baby-pink span, .card-baby-pink h3, .card-baby-pink p { color: #2C332A !important; }
+.card-soft-purple *, .card-soft-purple span, .card-soft-purple h3, .card-soft-purple p { color: #143019 !important; }
+.card-sky-blue *, .card-sky-blue span, .card-sky-blue h3, .card-sky-blue p { color: #143019 !important; }
+.card-mint-green *, .card-mint-green span, .card-mint-green h3, .card-mint-green p { color: #143019 !important; }
+.card-peach *, .card-peach span, .card-peach h3, .card-peach p { color: #143019 !important; }
+.card-baby-pink *, .card-baby-pink span, .card-baby-pink h3, .card-baby-pink p { color: #143019 !important; }
 
 /* Glassmorphic Sidebar Theme using User Colors */
 .sidebar-navy {
-  background-color: rgba(255, 255, 255, 0.95) !important;
-  color: #2C332A !important; /* Sage Dark Espresso */
-  border-right: 1px solid rgba(130, 194, 92, 0.12) !important;
-  box-shadow: 4px 0 24px rgba(44, 51, 42, 0.02) !important;
+  background-color: rgba(255, 248, 231, 0.95) !important;
+  color: #143019 !important; /* Sage Dark Espresso */
+  border-right: 1px solid rgba(78, 135, 82, 0.12) !important;
+  box-shadow: 4px 0 24px rgba(20, 48, 25, 0.02) !important;
 }
 
 .dark .sidebar-navy {
   background-color: rgba(26, 32, 24, 0.95) !important;
-  color: #FAF6EE !important;
+  color: #FFF8E7 !important;
   border-right: 1px solid rgba(255, 255, 255, 0.06) !important;
 }
 
 .sidebar-navy span, .sidebar-navy button {
-  color: #2C332A !important;
+  color: #143019 !important;
 }
 
 .dark .sidebar-navy span, .dark .sidebar-navy button {
-  color: #FAF6EE !important;
+  color: #FFF8E7 !important;
 }
 
 .sidebar-navy nav button {
@@ -188,48 +188,48 @@
 }
 
 .dark .sidebar-navy nav button {
-  color: #EBE3D5 !important; /* Beige Tan */
+  color: #EED9C4 !important; /* Beige Tan */
 }
 
 .sidebar-navy nav button:hover {
-  background-color: rgba(130, 194, 92, 0.05) !important;
-  color: #82C25C !important; /* Sage Green */
+  background-color: rgba(78, 135, 82, 0.05) !important;
+  color: #4E8752 !important; /* Sage Green */
 }
 
 /* Active tab button uses linear Dribbble gradient: Royal Blue to Cyan */
 .sidebar-navy nav button.bg-blue-600 {
-  background: linear-gradient(135deg, #82C25C 0%, #D3ECD1 100%) !important;
-  color: #2C332A !important;
-  box-shadow: 0 4px 15px rgba(130, 194, 92, 0.15) !important;
+  background: linear-gradient(135deg, #4E8752 0%, #B0DCAE 100%) !important;
+  color: #143019 !important;
+  box-shadow: 0 4px 15px rgba(78, 135, 82, 0.15) !important;
 }
 .sidebar-navy nav button.bg-blue-600 * {
-  color: #2C332A !important;
+  color: #143019 !important;
 }
 
 /* 🎨 Vibrant specific Platform Brand Gradients (Matches screenshot EXACTLY!) */
-.category-folder-YouTube { background: linear-gradient(135deg, #D4DEC7 0%, #A2B29F 100%) !important; } /* Warm sage */
-.category-folder-Instagram { background: linear-gradient(135deg, #EAE7DC 0%, #D8C3A5 100%) !important; } /* Warm sand-beige */
-.category-folder-LinkedIn { background: linear-gradient(135deg, #C2C5AA 0%, #8F9779 100%) !important; } /* Olive-sage */
-.category-folder-GitHub { background: linear-gradient(135deg, #E6E1C4 0%, #B8B08D 100%) !important; } /* Beige-tan */
-.category-folder-TwitterX { background: linear-gradient(135deg, #D3ECD1 0%, #9FB29B 100%) !important; } /* Mint-sage */
-.category-folder-Facebook { background: linear-gradient(135deg, #DFD3C3 0%, #B5A08C 100%) !important; } /* Tan-beige */
-.category-folder-Reddit { background: linear-gradient(135deg, #E3E7D3 0%, #B9C29D 100%) !important; } /* Light green-sage */
-.category-folder-Medium { background: linear-gradient(135deg, #F0EAD6 0%, #D2C8A6 100%) !important; } /* Butter-cream beige */
-.category-folder-Devto { background: linear-gradient(135deg, #D7DCD3 0%, #A3B899 100%) !important; } /* Dusty sage-green */
-.category-folder-PersonalWebsite { background: linear-gradient(135deg, #EAE3D2 0%, #BCA886 100%) !important; } /* Deep clay nude */
-.category-folder-Other { background: linear-gradient(135deg, #CBD5C0 0%, #9EB28F 100%) !important; } /* Earth green-sage */
+.category-folder-YouTube { background: linear-gradient(135deg, #F1E9D2 0%, #B0DCAE 100%) !important; } /* Parchment to Pale green */
+.category-folder-Instagram { background: linear-gradient(135deg, #FFF8E7 0%, #EED9C4 100%) !important; } /* Cosmic Latte to Almond */
+.category-folder-LinkedIn { background: linear-gradient(135deg, #EED9C4 0%, #C19A6B 100%) !important; } /* Almond to Camel */
+.category-folder-GitHub { background: linear-gradient(135deg, #F1E9D2 0%, #90C592 100%) !important; } /* Parchment to Light green */
+.category-folder-TwitterX { background: linear-gradient(135deg, #B0DCAE 0%, #4E8752 100%) !important; } /* Pale green to Medium green */
+.category-folder-Facebook { background: linear-gradient(135deg, #EED9C4 0%, #CFB095 100%) !important; } /* Almond to Hazelnut */
+.category-folder-Reddit { background: linear-gradient(135deg, #FFF8E7 0%, #B0DCAE 100%) !important; } /* Cosmic Latte to Pale green */
+.category-folder-Medium { background: linear-gradient(135deg, #FFF8E7 0%, #FFE4C4 100%) !important; } /* Cosmic Latte to Bisque */
+.category-folder-Devto { background: linear-gradient(135deg, #F1E9D2 0%, #C3B091 100%) !important; } /* Parchment to Khaki */
+.category-folder-PersonalWebsite { background: linear-gradient(135deg, #EED9C4 0%, #A67B5B 100%) !important; } /* Almond to French Beige */
+.category-folder-Other { background: linear-gradient(135deg, #B0DCAE 0%, #2E5A35 100%) !important; } /* Pale green to Forest green */
 
 /* 🎨 Vibrant Folder Cards Gradients for custom folders (index-based) */
-.category-folder-grad-0 { background: linear-gradient(135deg, #D4DEC7 0%, #A2B29F 100%) !important; }
-.category-folder-grad-1 { background: linear-gradient(135deg, #EAE7DC 0%, #D8C3A5 100%) !important; }
-.category-folder-grad-2 { background: linear-gradient(135deg, #C2C5AA 0%, #8F9779 100%) !important; }
-.category-folder-grad-3 { background: linear-gradient(135deg, #E6E1C4 0%, #B8B08D 100%) !important; }
-.category-folder-grad-4 { background: linear-gradient(135deg, #D3ECD1 0%, #9FB29B 100%) !important; }
-.category-folder-grad-5 { background: linear-gradient(135deg, #DFD3C3 0%, #B5A08C 100%) !important; }
-.category-folder-grad-6 { background: linear-gradient(135deg, #E3E7D3 0%, #B9C29D 100%) !important; }
-.category-folder-grad-7 { background: linear-gradient(135deg, #F0EAD6 0%, #D2C8A6 100%) !important; }
-.category-folder-grad-8 { background: linear-gradient(135deg, #D7DCD3 0%, #A3B899 100%) !important; }
-.category-folder-grad-9 { background: linear-gradient(135deg, #EAE3D2 0%, #BCA886 100%) !important; }
+.category-folder-grad-0 { background: linear-gradient(135deg, #F1E9D2 0%, #B0DCAE 100%) !important; }
+.category-folder-grad-1 { background: linear-gradient(135deg, #FFF8E7 0%, #EED9C4 100%) !important; }
+.category-folder-grad-2 { background: linear-gradient(135deg, #EED9C4 0%, #C19A6B 100%) !important; }
+.category-folder-grad-3 { background: linear-gradient(135deg, #F1E9D2 0%, #90C592 100%) !important; }
+.category-folder-grad-4 { background: linear-gradient(135deg, #B0DCAE 0%, #4E8752 100%) !important; }
+.category-folder-grad-5 { background: linear-gradient(135deg, #EED9C4 0%, #CFB095 100%) !important; }
+.category-folder-grad-6 { background: linear-gradient(135deg, #FFF8E7 0%, #B0DCAE 100%) !important; }
+.category-folder-grad-7 { background: linear-gradient(135deg, #FFF8E7 0%, #FFE4C4 100%) !important; }
+.category-folder-grad-8 { background: linear-gradient(135deg, #F1E9D2 0%, #C3B091 100%) !important; }
+.category-folder-grad-9 { background: linear-gradient(135deg, #EED9C4 0%, #A67B5B 100%) !important; }
 
 /* Apply transitions and hover effects directly to folder containers */
 [class*="category-folder-"], [class*="category-folder-grad-"] {
@@ -247,36 +247,36 @@
 [class*="category-folder-grad-"] h3, 
 [class*="category-folder-grad-"] span, 
 [class*="category-folder-grad-"] p {
-  color: #2C332A !important;
+  color: #143019 !important;
 }
 
 /* 🏠 Dashboard Custom Layout Card Overrides (Vibrant Medium Shades) */
 .dashboard-add-link {
-  background: linear-gradient(135deg, #82C25C 0%, #EBE3D5 100%) !important; /* Fresh Green to Beige */
-  border: 1px solid #82C25C !important;
-  color: #FAF6EE !important;
+  background: linear-gradient(135deg, #4E8752 0%, #EED9C4 100%) !important; /* Fresh Green to Beige */
+  border: 1px solid #4E8752 !important;
+  color: #FFF8E7 !important;
 }
 .dashboard-add-link h2, 
 .dashboard-add-link label, 
 .dashboard-add-link span {
-  color: #FAF6EE !important;
+  color: #FFF8E7 !important;
 }
 .dashboard-add-link input, 
 .dashboard-add-link select {
   background-color: rgba(250, 246, 238, 0.9) !important;
-  color: #2C332A !important;
+  color: #143019 !important;
   border: 1px solid rgba(130, 194, 92, 0.5) !important;
 }
 .dashboard-add-link input::placeholder {
   color: rgba(94, 102, 92, 0.6) !important;
 }
 .dashboard-add-link select option {
-  background-color: #FAF6EE !important;
-  color: #2C332A !important;
+  background-color: #FFF8E7 !important;
+  color: #143019 !important;
 }
 .dashboard-add-link button[type="submit"] {
-  background: #2C332A !important;
-  color: #FAF6EE !important;
+  background: #143019 !important;
+  color: #FFF8E7 !important;
   border: none !important;
 }
 .dashboard-add-link button[type="submit"]:hover {
@@ -284,29 +284,29 @@
 }
 
 .dashboard-missions {
-  background: linear-gradient(135deg, #EBE3D5 0%, #D3ECD1 100%) !important; /* Beige to Light Green */
-  border: 1px solid #EBE3D5 !important;
-  color: #2C332A !important;
+  background: linear-gradient(135deg, #EED9C4 0%, #B0DCAE 100%) !important; /* Beige to Light Green */
+  border: 1px solid #EED9C4 !important;
+  color: #143019 !important;
 }
 .dashboard-missions h2, 
 .dashboard-missions span, 
 .dashboard-missions button {
-  color: #2C332A !important;
+  color: #143019 !important;
 }
 
 .dashboard-quick-stats {
-  background: linear-gradient(135deg, #FAF6EE 0%, rgba(211, 236, 209, 0.15) 100%) !important; /* Oatmeal to Mint Green */
-  border: 1px solid #EBE3D5 !important;
+  background: linear-gradient(135deg, #FFF8E7 0%, rgba(176, 220, 174, 0.15) 100%) !important; /* Cosmic Latte to Pale Green */
+  border: 1px solid #EED9C4 !important;
 }
 
 /* Global typography definitions based on User Specifications */
 h1, h2, h3, h4, h5, h6, 
 .text-slate-800, .text-slate-700, .text-slate-650 {
-  color: #2C332A !important; /* Formal Sage Dark Espresso text */
+  color: #143019 !important; /* Formal Sage Dark Espresso text */
 }
 
 p, .text-slate-500, .text-slate-450, .text-slate-400 {
-  color: #6E7A6C !important; /* Sage Olive Gray text */
+  color: #4E8752 !important; /* Sage Olive Gray text */
 }
 
 /* Glassmorphism styling utilities */
@@ -330,28 +330,28 @@ p, .text-slate-500, .text-slate-450, .text-slate-400 {
 .glass-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
-  border-color: rgba(130, 194, 92, 0.25) !important;
+  border-color: rgba(78, 135, 82, 0.25) !important;
 }
 
 /* Standard button matches Royal Blue to Indigo */
 .bg-blue-600 {
-  background: linear-gradient(135deg, #82C25C 0%, #D3ECD1 100%) !important;
+  background: linear-gradient(135deg, #4E8752 0%, #B0DCAE 100%) !important;
   border: none !important;
-  color: #FAF6EE !important;
+  color: #FFF8E7 !important;
 }
 
 .bg-blue-600:hover {
-  background: linear-gradient(135deg, #D3ECD1 0%, #6CA64A 100%) !important;
+  background: linear-gradient(135deg, #B0DCAE 0%, #2E5A35 100%) !important;
 }
 
 /* Neumorphic adjustments */
 .neumorphic-inset {
-  box-shadow: inset 2px 2px 5px rgba(44, 51, 42, 0.03), inset -2px -2px 5px rgba(230, 223, 211, 0.7);
+  box-shadow: inset 2px 2px 5px rgba(20, 48, 25, 0.03), inset -2px -2px 5px rgba(238, 217, 196, 0.7);
 }
 
 /* Glow details */
 .glow-primary {
-  box-shadow: 0 0 24px rgba(130, 194, 92, 0.15);
+  box-shadow: 0 0 24px rgba(78, 135, 82, 0.15);
 }
 
 /* Custom Scrollbars */

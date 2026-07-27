@@ -149,7 +149,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
     <div className="space-y-6">
       {/* Welcome Banner & Streak Stats */}
       <div className="flex flex-col md:flex-row gap-4 items-stretch justify-between">
-        <div className="flex-1 p-6 bg-gradient-to-r from-[#82C25C] via-[#D3ECD1] to-[#EAE0D5] text-white rounded-3xl flex flex-col justify-between shadow-lg">
+        <div className="flex-1 p-6 bg-gradient-to-r from-[#4E8752] via-[#B0DCAE] to-[#EAE0D5] text-white rounded-3xl flex flex-col justify-between shadow-lg">
           <div>
             <h1 className="heading-font text-2xl md:text-3xl font-extrabold text-white leading-tight flex flex-wrap items-center gap-2">
               Hello Link Organizer!
@@ -181,7 +181,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             </div>
             <div className="w-full bg-black/15 h-3 rounded-full overflow-hidden p-0.5 border border-white/10 shadow-inner">
               <div 
-                className="h-full bg-gradient-to-r from-[#82C25C] to-[#42E2D0] rounded-full transition-all duration-700 shadow-md"
+                className="h-full bg-gradient-to-r from-[#4E8752] to-[#42E2D0] rounded-full transition-all duration-700 shadow-md"
                 style={{ width: `${xpPercent}%` }}
               />
             </div>
@@ -191,28 +191,28 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         {/* Streak & Level Cards */}
         <div className="grid grid-cols-2 md:w-[320px] gap-4">
           <div className="p-5 card-peach rounded-3xl flex flex-col justify-between items-center text-center shadow-lg shadow-yellow-500/5 border border-white/10">
-            <div className="p-3 bg-white/30 rounded-full text-[#2C332A]">
+            <div className="p-3 bg-white/30 rounded-full text-[#143019]">
               <Flame className="w-6 h-6 fill-current animate-pulse" />
             </div>
             <div className="mt-2">
-              <span className="block text-2xl font-black text-[#2C332A] heading-font">
+              <span className="block text-2xl font-black text-[#143019] heading-font">
                 {stats.streak} {stats.streak === 1 ? 'Day' : 'Days'}
               </span>
-              <span className="text-[10px] uppercase font-bold text-[#2C332A]/85 tracking-wider">
+              <span className="text-[10px] uppercase font-bold text-[#143019]/85 tracking-wider">
                 Current Streak
               </span>
             </div>
           </div>
 
           <div className="p-5 card-baby-pink rounded-3xl flex flex-col justify-between items-center text-center shadow-lg shadow-pink-500/5 border border-white/10">
-            <div className="p-3 bg-white/30 rounded-full text-[#2C332A]">
+            <div className="p-3 bg-white/30 rounded-full text-[#143019]">
               <Zap className="w-6 h-6 fill-current" />
             </div>
             <div className="mt-2">
-              <span className="block text-2xl font-black text-[#2C332A] heading-font">
+              <span className="block text-2xl font-black text-[#143019] heading-font">
                 {stats.xp}
               </span>
-              <span className="text-[10px] uppercase font-bold text-[#2C332A]/85 tracking-wider">
+              <span className="text-[10px] uppercase font-bold text-[#143019]/85 tracking-wider">
                 Total XP Earned
               </span>
             </div>
@@ -222,8 +222,8 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
       {/* Floating Add Link Quick-Bar */}
       <div className="p-6 dashboard-add-link rounded-3xl shadow-lg glow-primary/5">
-        <h2 className="heading-font text-lg font-bold text-[#2C332A] mb-4 flex items-center gap-2">
-          <LinkIcon className="w-5 h-5 text-[#82C25C]" /> Save a New Link
+        <h2 className="heading-font text-lg font-bold text-[#143019] mb-4 flex items-center gap-2">
+          <LinkIcon className="w-5 h-5 text-[#4E8752]" /> Save a New Link
         </h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="flex flex-col md:flex-row gap-3">
@@ -293,7 +293,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
       {/* Daily Trivia Challenge (Quiz Widget) */}
       {quiz && (
-        <div className="p-6 bg-gradient-to-tr from-[#EBE3D5]/15 via-[#D3ECD1]/10 to-[#EAE0D5]/10 border border-[#EBE3D5]/20 rounded-3xl space-y-4 shadow-sm">
+        <div className="p-6 bg-gradient-to-tr from-[#EED9C4]/15 via-[#B0DCAE]/10 to-[#EAE0D5]/10 border border-[#EED9C4]/20 rounded-3xl space-y-4 shadow-sm">
           <div className="flex justify-between items-start">
             <div>
               <h3 className="heading-font text-base font-extrabold text-slate-800 dark:text-white flex items-center gap-2">
@@ -335,7 +335,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                     btnStyle = "border-slate-100 dark:border-slate-900 bg-slate-50/50 dark:bg-slate-950/20 text-slate-400 dark:text-slate-655 cursor-not-allowed opacity-50";
                   }
                 } else {
-                  btnStyle += " hover:border-[#EBE3D5]/50 dark:hover:border-[#EBE3D5]/50 hover:bg-slate-50 dark:hover:bg-slate-850 cursor-pointer";
+                  btnStyle += " hover:border-[#EED9C4]/50 dark:hover:border-[#EED9C4]/50 hover:bg-slate-50 dark:hover:bg-slate-850 cursor-pointer";
                 }
 
                 return (
@@ -454,8 +454,8 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             
             <div className="space-y-4">
               <div className="flex justify-between items-center p-3 rounded-2xl card-sky-blue shadow-sm">
-                <span className="text-xs font-bold text-[#2C332A]/90">Total Links</span>
-                <span className="text-sm font-black heading-font text-[#2C332A]">{totalLinks}</span>
+                <span className="text-xs font-bold text-[#143019]/90">Total Links</span>
+                <span className="text-sm font-black heading-font text-[#143019]">{totalLinks}</span>
               </div>
               
               <div className="flex justify-between items-center p-3 rounded-2xl card-soft-purple shadow-sm">
@@ -464,13 +464,13 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               </div>
               
               <div className="flex justify-between items-center p-3 rounded-2xl card-peach shadow-sm">
-                <span className="text-xs font-bold text-[#2C332A]/90">Top Platform</span>
-                <span className="text-xs font-black bg-white/50 px-2 py-0.5 rounded text-right truncate max-w-[130px] text-[#2C332A]">{getMostUsedPlatform()}</span>
+                <span className="text-xs font-bold text-[#143019]/90">Top Platform</span>
+                <span className="text-xs font-black bg-white/50 px-2 py-0.5 rounded text-right truncate max-w-[130px] text-[#143019]">{getMostUsedPlatform()}</span>
               </div>
 
               <div className="flex justify-between items-center p-3 rounded-2xl card-mint-green shadow-sm">
-                <span className="text-xs font-bold text-[#2C332A]/90">Favorite Category</span>
-                <span className="text-xs font-black bg-white/50 px-2 py-0.5 rounded text-right truncate max-w-[130px] text-[#2C332A]">{getFavoriteCategory()}</span>
+                <span className="text-xs font-bold text-[#143019]/90">Favorite Category</span>
+                <span className="text-xs font-black bg-white/50 px-2 py-0.5 rounded text-right truncate max-w-[130px] text-[#143019]">{getFavoriteCategory()}</span>
               </div>
             </div>
           </div>

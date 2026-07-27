@@ -51,40 +51,40 @@ export const CategoriesView: React.FC<CategoriesViewProps> = ({
     const iconClass = "w-6 h-6";
     switch (name) {
       case 'YouTube':
-        return <Youtube className={`${iconClass} text-[#2C332A] fill-current`} />;
+        return <Youtube className={`${iconClass} text-[#143019] fill-current`} />;
       case 'Instagram':
-        return <Instagram className={`${iconClass} text-[#2C332A]`} />;
+        return <Instagram className={`${iconClass} text-[#143019]`} />;
       case 'LinkedIn':
-        return <Linkedin className={`${iconClass} text-[#2C332A] fill-current`} />;
+        return <Linkedin className={`${iconClass} text-[#143019] fill-current`} />;
       case 'GitHub':
-        return <Github className={`${iconClass} text-[#2C332A] fill-current`} />;
+        return <Github className={`${iconClass} text-[#143019] fill-current`} />;
       case 'Twitter/X':
-        return <svg viewBox="0 0 24 24" className={`${iconClass} text-[#2C332A] fill-current`}><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>;
+        return <svg viewBox="0 0 24 24" className={`${iconClass} text-[#143019] fill-current`}><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>;
       case 'Facebook':
-        return <Facebook className={`${iconClass} text-[#2C332A] fill-current`} />;
+        return <Facebook className={`${iconClass} text-[#143019] fill-current`} />;
       case 'Reddit':
         return (
-          <svg viewBox="0 0 24 24" className={`${iconClass} text-[#2C332A] fill-current`}>
+          <svg viewBox="0 0 24 24" className={`${iconClass} text-[#143019] fill-current`}>
             <path d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.85-1.68-6.23-1.78l1.32-4.17 4.26 1c.02.79.68 1.4 1.48 1.4 1.1 0 2-.9 2-2s-.9-2-2-2c-.74 0-1.36.4-1.72.97l-4.7-1.1c-.24-.05-.47.1-.53.34L10.8 7.95C8.36 8.05 6.07 8.75 4.38 9.77c-.55-.77-1.46-1.27-2.48-1.27-1.65 0-3 1.35-3 3 0 1.23.75 2.27 1.8 2.73-.07.4-.1.82-.1 1.24 0 3.32 4.03 6.03 9 6.03s9-2.7 9-6.03c0-.42-.03-.84-.1-1.24 1.05-.46 1.8-1.5 1.8-2.73zM6 13.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5c0 .83-.67 1.5-1.5 1.5S6 14.33 6 13.5zm9.5 4.5c-1.5 1.5-4.5 1.5-6 0-.3-.3-.3-.7 0-1 .3-.3.7-.3 1 0 .9.9 3.1.9 4 0 .3-.3.7-.3 1 0 .3.3.3.7 0 1zM16.5 15c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
           </svg>
         );
       case 'Medium':
         return (
-          <svg viewBox="0 0 24 24" className={`${iconClass} text-[#2C332A] fill-current`}>
+          <svg viewBox="0 0 24 24" className={`${iconClass} text-[#143019] fill-current`}>
             <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42zM24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75c.66 0 1.19 2.58 1.19 5.75z"/>
           </svg>
         );
       case 'Dev.to':
         return (
-          <svg viewBox="0 0 24 24" className={`${iconClass} text-[#2C332A] fill-none stroke-current`} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <svg viewBox="0 0 24 24" className={`${iconClass} text-[#143019] fill-none stroke-current`} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="16 18 22 12 16 6" />
             <polyline points="8 6 2 12 8 18" />
           </svg>
         );
       case 'Personal Website':
-        return <Globe className={`${iconClass} text-[#2C332A]`} />;
+        return <Globe className={`${iconClass} text-[#143019]`} />;
       default:
-        return <Link className={`${iconClass} text-[#2C332A]`} />;
+        return <Link className={`${iconClass} text-[#143019]`} />;
     }
   };
 
@@ -263,13 +263,13 @@ export const CategoriesView: React.FC<CategoriesViewProps> = ({
                         <div className="flex gap-1 justify-end">
                           <button 
                             onClick={() => setEditingCatId('')}
-                            className="px-2.5 py-1 text-[10px] bg-[#EBE3D5] text-[#2C332A] rounded font-semibold"
+                            className="px-2.5 py-1 text-[10px] bg-[#EED9C4] text-[#143019] rounded font-semibold"
                           >
                             Cancel
                           </button>
                           <button 
                             onClick={handleSaveRename}
-                            className="px-2.5 py-1 text-[10px] bg-blue-600 text-[#2C332A] rounded font-semibold"
+                            className="px-2.5 py-1 text-[10px] bg-blue-600 text-[#143019] rounded font-semibold"
                           >
                             Save
                           </button>
@@ -278,12 +278,12 @@ export const CategoriesView: React.FC<CategoriesViewProps> = ({
                     ) : (
                       <>
                         <div className="flex justify-between items-start">
-                          <div className="w-12 h-12 bg-[#FAF6EE]/80 rounded-2xl flex items-center justify-center shadow-md">
+                          <div className="w-12 h-12 bg-[#FFF8E7]/80 rounded-2xl flex items-center justify-center shadow-md">
                             {getCategoryBrandIcon(cat.name)}
                           </div>
                           <button 
                             onClick={(e) => handleStartRename(e, cat)}
-                            className="opacity-0 group-hover/folder:opacity-100 p-1.5 hover:text-blue-500 rounded-lg hover:bg-[#EBE3D5] text-[#2C332A] transition-all"
+                            className="opacity-0 group-hover/folder:opacity-100 p-1.5 hover:text-blue-500 rounded-lg hover:bg-[#EED9C4] text-[#143019] transition-all"
                             title="Rename Category"
                           >
                             <Edit3 className="w-3.5 h-3.5" />
@@ -294,7 +294,7 @@ export const CategoriesView: React.FC<CategoriesViewProps> = ({
                           <h3 className="heading-font text-base font-extrabold text-slate-800 dark:text-white mb-0.5 truncate">
                             {cat.name}
                           </h3>
-                          <span className="text-[11px] font-bold text-[#2C332A]/70 uppercase tracking-wide">
+                          <span className="text-[11px] font-bold text-[#143019]/70 uppercase tracking-wide">
                             {count} {count === 1 ? 'link' : 'links'}
                           </span>
                         </div>
@@ -319,7 +319,7 @@ export const CategoriesView: React.FC<CategoriesViewProps> = ({
               </div>
               <button 
                 onClick={() => setShowNewCollectionModal(true)}
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-[#2C332A] rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-sm hover:shadow transition-all cursor-pointer"
+                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-[#143019] rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-sm hover:shadow transition-all cursor-pointer"
               >
                 <FolderPlus className="w-4 h-4" /> Create Folder
               </button>
@@ -335,12 +335,12 @@ export const CategoriesView: React.FC<CategoriesViewProps> = ({
                     className={`p-5 rounded-2xl border border-slate-200/50 dark:border-slate-800/30 flex flex-col justify-between h-40 cursor-pointer group/col category-folder-grad-${(index + 3) % 10}`}
                   >
                     <div className="flex justify-between items-start">
-                      <div className="w-12 h-12 bg-[#FAF6EE]/80 rounded-2xl flex items-center justify-center shadow-md text-[#82C25C]">
+                      <div className="w-12 h-12 bg-[#FFF8E7]/80 rounded-2xl flex items-center justify-center shadow-md text-[#4E8752]">
                         <Folder className="w-6 h-6 fill-current" />
                       </div>
                       <button 
                         onClick={(e) => handleDeleteCol(e, col.id)}
-                        className="opacity-0 group-hover/col:opacity-100 p-1.5 hover:text-red-500 rounded-lg hover:bg-[#EBE3D5] text-[#2C332A] transition-all"
+                        className="opacity-0 group-hover/col:opacity-100 p-1.5 hover:text-red-500 rounded-lg hover:bg-[#EED9C4] text-[#143019] transition-all"
                         title="Delete Folder"
                       >
                         <Trash2 className="w-3.5 h-3.5" />
@@ -351,10 +351,10 @@ export const CategoriesView: React.FC<CategoriesViewProps> = ({
                       <h3 className="heading-font text-base font-extrabold text-slate-800 dark:text-white mb-0.5 truncate">
                         {col.name}
                       </h3>
-                      <p className="text-[10px] text-[#2C332A]/70 truncate mb-1">
+                      <p className="text-[10px] text-[#143019]/70 truncate mb-1">
                         {col.description || 'No description'}
                       </p>
-                      <span className="text-[11px] font-bold text-[#2C332A]/70 uppercase tracking-wide">
+                      <span className="text-[11px] font-bold text-[#143019]/70 uppercase tracking-wide">
                         {count} {count === 1 ? 'link' : 'links'} (tagged)
                       </span>
                     </div>
@@ -497,11 +497,11 @@ export const CategoriesView: React.FC<CategoriesViewProps> = ({
           <div className="w-full max-w-md p-6 glass-panel rounded-3xl border-slate-200/50 dark:border-slate-800/30 shadow-2xl animate-scale-up">
             <div className="flex justify-between items-center mb-4">
               <h3 className="heading-font text-lg font-bold text-slate-800 dark:text-white flex items-center gap-1.5">
-                <FolderPlus className="w-5 h-5 text-[#82C25C]" /> Create Custom Folder
+                <FolderPlus className="w-5 h-5 text-[#4E8752]" /> Create Custom Folder
               </h3>
               <button 
                 onClick={() => setShowNewCollectionModal(false)}
-                className="p-1 rounded-lg hover:bg-[#EBE3D5] text-slate-400"
+                className="p-1 rounded-lg hover:bg-[#EED9C4] text-slate-400"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -539,13 +539,13 @@ export const CategoriesView: React.FC<CategoriesViewProps> = ({
                 <button 
                   type="button"
                   onClick={() => setShowNewCollectionModal(false)}
-                  className="px-4 py-2.5 rounded-xl bg-[#EBE3D5] hover:bg-[#D8D2C4] text-[#2C332A] font-bold text-xs cursor-pointer"
+                  className="px-4 py-2.5 rounded-xl bg-[#EED9C4] hover:bg-[#D8D2C4] text-[#143019] font-bold text-xs cursor-pointer"
                 >
                   Cancel
                 </button>
                 <button 
                   type="submit"
-                  className="px-4.5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-[#2C332A] font-bold text-xs shadow-sm hover:shadow transition-all cursor-pointer"
+                  className="px-4.5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-[#143019] font-bold text-xs shadow-sm hover:shadow transition-all cursor-pointer"
                 >
                   Create Folder
                 </button>
