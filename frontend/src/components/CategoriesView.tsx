@@ -335,7 +335,7 @@ export const CategoriesView: React.FC<CategoriesViewProps> = ({
                     className={`p-5 rounded-2xl border border-slate-200/50 dark:border-slate-800/30 flex flex-col justify-between h-40 cursor-pointer group/col category-folder-grad-${(index + 3) % 10}`}
                   >
                     <div className="flex justify-between items-start">
-                      <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-md text-[#6E472A]">
+                      <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-md text-[#CBBD93]">
                         <Folder className="w-6 h-6 fill-current" />
                       </div>
                       <button 
