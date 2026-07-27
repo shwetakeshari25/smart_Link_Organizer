@@ -142,26 +142,26 @@ export const LinkCard: React.FC<LinkCardProps> = ({ link, onUpdate, onDelete, on
       case 'LinkedIn': return 'from-[#00c6ff] to-[#0072ff]';
       case 'Instagram': return 'from-[#f857a6] to-[#ff5858]';
       case 'Twitter/X': return 'from-[#11998e] to-[#38ef7d]';
-      case 'Facebook': return 'from-[#6850F2] to-[#5136E0]';
+      case 'Facebook': return 'from-[#8B5E3C] to-[#5136E0]';
       case 'Reddit': return 'from-[#ff7e5f] to-[#feb47b]';
       case 'Medium': return 'from-[#00b09b] to-[#96c93d]';
       case 'Dev.to': return 'from-[#ea00d9] to-[#711c91]';
       case 'Personal Website': return 'from-[#4facfe] to-[#00f2fe]';
-      default: return 'from-[#6850F2] to-[#34BEA9]';
+      default: return 'from-[#8B5E3C] to-[#34BEA9]';
     }
   };
 
   const getPlatformBg = (platform: string) => {
     switch (platform) {
-      case 'YouTube': return 'bg-[#FFF0F3] border-[#F58FA8]/30';
-      case 'GitHub': return 'bg-[#F5F5FC] border-[#5B5FEF]/20';
-      case 'LinkedIn': return 'bg-[#EBF9FF] border-[#49C6F8]/30';
+      case 'YouTube': return 'bg-[#FFF0F3] border-[#DEAB90]/30';
+      case 'GitHub': return 'bg-[#F5F5FC] border-[#6E472A]/20';
+      case 'LinkedIn': return 'bg-[#EBF9FF] border-[#D4C5B9]/30';
       case 'Instagram': return 'bg-[#FFF0FA] border-[#F8B4D9]/30';
-      case 'Twitter/X': return 'bg-[#EDFCFF] border-[#59D9F8]/30';
-      case 'Facebook': return 'bg-[#F3E8FF] border-[#6850F2]/20';
+      case 'Twitter/X': return 'bg-[#EDFCFF] border-[#EAE0D5]/30';
+      case 'Facebook': return 'bg-[#F3E8FF] border-[#8B5E3C]/20';
       case 'Reddit': return 'bg-[#FFF7F0] border-[#F8C79A]/30';
       case 'Medium': return 'bg-[#F0FFF9] border-[#7EE7C4]/30';
-      case 'Dev.to': return 'bg-[#F7F2FF] border-[#8B5CF6]/30';
+      case 'Dev.to': return 'bg-[#F7F2FF] border-[#A67C52]/30';
       case 'Personal Website': return 'bg-[#EEFDFB] border-[#42E2D0]/30';
       default: return 'bg-[#FAF6FA] border-[#C8B6FF]/30';
     }

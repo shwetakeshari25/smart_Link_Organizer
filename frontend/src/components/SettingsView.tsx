@@ -101,7 +101,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
 
       {/* Theme preferences */}
       <div className="p-6 bg-gradient-to-br from-[#FAF6FA] to-[#C8B6FF]/15 border border-[#C8B6FF]/35 rounded-3xl space-y-4 shadow-sm">
-        <h3 className="heading-font text-base font-bold text-[#2E3558] flex items-center gap-2">
+        <h3 className="heading-font text-base font-bold text-[#3D3025] flex items-center gap-2">
           {theme === 'light' ? <Sun className="w-5 h-5 text-amber-500" /> : <Moon className="w-5 h-5 text-indigo-500" />} Theme Preferences
         </h3>
         <div className="flex items-center justify-between">
@@ -128,9 +128,9 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
       </div>
 
       {/* Backup and restore */}
-      <div className="p-6 bg-gradient-to-br from-[#FAF6FA] to-[#49C6F8]/15 border border-[#49C6F8]/35 rounded-3xl space-y-4 shadow-sm">
-        <h3 className="heading-font text-base font-bold text-[#2E3558] flex items-center gap-2">
-          <Download className="w-5 h-5 text-[#6850F2]" /> Backup & Import Data
+      <div className="p-6 bg-gradient-to-br from-[#FAF6FA] to-[#D4C5B9]/15 border border-[#D4C5B9]/35 rounded-3xl space-y-4 shadow-sm">
+        <h3 className="heading-font text-base font-bold text-[#3D3025] flex items-center gap-2">
+          <Download className="w-5 h-5 text-[#8B5E3C]" /> Backup & Import Data
         </h3>
         <p className="text-xs text-slate-500 leading-normal">
           Save your database backups locally as standard JSON files or import previously exported collections.
@@ -175,8 +175,8 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
 
       {/* Keyboard Shortcuts Sheet */}
       <div className="p-6 bg-gradient-to-br from-[#FAF6FA] to-[#F8C79A]/15 border border-[#F8C79A]/35 rounded-3xl space-y-4 shadow-sm">
-        <h3 className="heading-font text-base font-bold text-[#2E3558] flex items-center gap-2">
-          <Keyboard className="w-5 h-5 text-[#8B5CF6]" /> Keyboard Shortcuts Guide
+        <h3 className="heading-font text-base font-bold text-[#3D3025] flex items-center gap-2">
+          <Keyboard className="w-5 h-5 text-[#A67C52]" /> Keyboard Shortcuts Guide
         </h3>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-bold">
