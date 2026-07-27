@@ -35,7 +35,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ links }) => {
   };
 
   const platformData = getPlatformData();
-  const COLORS = ['#2563EB', '#14B8A6', '#E6DFD3', '#22C55E', '#F59E0B', '#EF4444', '#EC4899', '#64748B'];
+  const COLORS = ['#2563EB', '#14B8A6', '#EBE3D5', '#22C55E', '#F59E0B', '#EF4444', '#EC4899', '#64748B'];
 
   // 3. Category Data for Bar Chart
   const getCategoryData = () => {
@@ -85,42 +85,42 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ links }) => {
       {/* Grid of Metric Cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="p-5 card-sky-blue rounded-3xl border border-[#D4C5B9]/20 flex items-center gap-4 shadow-sm">
-          <div className="p-3 bg-white/30 rounded-2xl text-[#2F362E]">
+          <div className="p-3 bg-white/30 rounded-2xl text-[#2C332A]">
             <FileText className="w-5 h-5" />
           </div>
           <div>
-            <span className="block text-xl font-black text-[#2F362E] heading-font">{totalLinks}</span>
-            <span className="text-[10px] uppercase font-bold text-[#2F362E]/80 tracking-wider">Total Links</span>
+            <span className="block text-xl font-black text-[#2C332A] heading-font">{totalLinks}</span>
+            <span className="text-[10px] uppercase font-bold text-[#2C332A]/80 tracking-wider">Total Links</span>
           </div>
         </div>
 
         <div className="p-5 card-mint-green rounded-3xl border border-[#7EE7C4]/20 flex items-center gap-4 shadow-sm">
-          <div className="p-3 bg-white/30 rounded-2xl text-[#2F362E]">
+          <div className="p-3 bg-white/30 rounded-2xl text-[#2C332A]">
             <CheckCircle className="w-5 h-5" />
           </div>
           <div>
-            <span className="block text-xl font-black text-[#2F362E] heading-font">{completionRate}%</span>
-            <span className="text-[10px] uppercase font-bold text-[#2F362E]/80 tracking-wider">Completion Rate</span>
+            <span className="block text-xl font-black text-[#2C332A] heading-font">{completionRate}%</span>
+            <span className="text-[10px] uppercase font-bold text-[#2C332A]/80 tracking-wider">Completion Rate</span>
           </div>
         </div>
 
         <div className="p-5 card-peach rounded-3xl border border-[#F8C79A]/20 flex items-center gap-4 shadow-sm">
-          <div className="p-3 bg-white/30 rounded-2xl text-[#2F362E]">
+          <div className="p-3 bg-white/30 rounded-2xl text-[#2C332A]">
             <Clock className="w-5 h-5" />
           </div>
           <div>
-            <span className="block text-xl font-black text-[#2F362E] heading-font">{watchingLinks}</span>
-            <span className="text-[10px] uppercase font-bold text-[#2F362E]/80 tracking-wider">In Progress</span>
+            <span className="block text-xl font-black text-[#2C332A] heading-font">{watchingLinks}</span>
+            <span className="text-[10px] uppercase font-bold text-[#2C332A]/80 tracking-wider">In Progress</span>
           </div>
         </div>
 
         <div className="p-5 card-baby-pink rounded-3xl border border-[#F8B4D9]/20 flex items-center gap-4 shadow-sm">
-          <div className="p-3 bg-white/30 rounded-2xl text-[#2F362E]">
+          <div className="p-3 bg-white/30 rounded-2xl text-[#2C332A]">
             <Tag className="w-5 h-5" />
           </div>
           <div>
-            <span className="block text-xl font-black text-[#2F362E] heading-font">{uniqueTagsCount}</span>
-            <span className="text-[10px] uppercase font-bold text-[#2F362E]/80 tracking-wider">Unique Tags</span>
+            <span className="block text-xl font-black text-[#2C332A] heading-font">{uniqueTagsCount}</span>
+            <span className="text-[10px] uppercase font-bold text-[#2C332A]/80 tracking-wider">Unique Tags</span>
           </div>
         </div>
       </div>
@@ -129,9 +129,9 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ links }) => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         
         {/* 1. Weekly Activity Chart */}
-        <div className="p-6 bg-gradient-to-br from-white/95 to-[#D2DCD0]/10 border border-[#D2DCD0]/30 rounded-3xl shadow-lg">
-          <h3 className="heading-font text-base font-bold text-[#2F362E] mb-4 flex items-center gap-2">
-            <Activity className="w-4 h-4 text-[#7A8F75]" /> Weekly Saving Activity
+        <div className="p-6 bg-gradient-to-br from-white/95 to-[#D3ECD1]/10 border border-[#D3ECD1]/30 rounded-3xl shadow-lg">
+          <h3 className="heading-font text-base font-bold text-[#2C332A] mb-4 flex items-center gap-2">
+            <Activity className="w-4 h-4 text-[#82C25C]" /> Weekly Saving Activity
           </h3>
           <div className="h-64">
             {totalLinks === 0 ? (
@@ -167,8 +167,8 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ links }) => {
 
         {/* 2. Platform Distribution Pie Chart */}
         <div className="p-6 bg-gradient-to-br from-white/95 to-[#D4C5B9]/10 border border-[#D4C5B9]/30 rounded-3xl shadow-lg">
-          <h3 className="heading-font text-base font-bold text-[#2F362E] mb-4 flex items-center gap-2">
-            <PieChartIcon className="w-4 h-4 text-[#7A8F75]" /> Platform Share
+          <h3 className="heading-font text-base font-bold text-[#2C332A] mb-4 flex items-center gap-2">
+            <PieChartIcon className="w-4 h-4 text-[#82C25C]" /> Platform Share
           </h3>
           <div className="h-64 flex flex-col sm:flex-row items-center justify-between gap-4">
             {totalLinks === 0 ? (
@@ -203,7 +203,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ links }) => {
 
         {/* 3. Category Distribution Bar Chart */}
         <div className="p-6 bg-gradient-to-br from-white/95 to-[#7EE7C4]/10 border border-[#7EE7C4]/30 rounded-3xl shadow-lg lg:col-span-2">
-          <h3 className="heading-font text-base font-bold text-[#2F362E] mb-4 flex items-center gap-2">
+          <h3 className="heading-font text-base font-bold text-[#2C332A] mb-4 flex items-center gap-2">
             <BarChart2 className="w-4 h-4 text-[#34BEA9]" /> Category Breakdown
           </h3>
           <div className="h-64">

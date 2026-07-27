@@ -180,13 +180,13 @@ export const AchievementsView: React.FC<AchievementsViewProps> = ({ stats, total
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
           <div className="p-3 card-sky-blue rounded-2xl shadow-sm">
-            <span className="block text-lg font-black text-[#2F362E] heading-font">+10 XP</span>
-            <span className="text-[10px] text-[#2F362E]/85 font-extrabold uppercase tracking-wider">Save a Link</span>
+            <span className="block text-lg font-black text-[#2C332A] heading-font">+10 XP</span>
+            <span className="text-[10px] text-[#2C332A]/85 font-extrabold uppercase tracking-wider">Save a Link</span>
           </div>
 
           <div className="p-3 card-mint-green rounded-2xl shadow-sm">
-            <span className="block text-lg font-black text-[#2F362E] heading-font">+20 XP</span>
-            <span className="text-[10px] text-[#2F362E]/85 font-extrabold uppercase tracking-wider">Complete Link</span>
+            <span className="block text-lg font-black text-[#2C332A] heading-font">+20 XP</span>
+            <span className="text-[10px] text-[#2C332A]/85 font-extrabold uppercase tracking-wider">Complete Link</span>
           </div>
 
           <div className="p-3 card-soft-purple rounded-2xl shadow-sm">
@@ -195,8 +195,8 @@ export const AchievementsView: React.FC<AchievementsViewProps> = ({ stats, total
           </div>
 
           <div className="p-3 card-baby-pink rounded-2xl shadow-sm">
-            <span className="block text-lg font-black text-[#2F362E] heading-font">+2 XP</span>
-            <span className="text-[10px] text-[#2F362E]/85 font-extrabold uppercase tracking-wider">Favorite Link</span>
+            <span className="block text-lg font-black text-[#2C332A] heading-font">+2 XP</span>
+            <span className="text-[10px] text-[#2C332A]/85 font-extrabold uppercase tracking-wider">Favorite Link</span>
           </div>
         </div>
       </div>

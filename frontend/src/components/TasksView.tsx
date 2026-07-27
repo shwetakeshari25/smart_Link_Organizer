@@ -91,7 +91,7 @@ export const TasksView: React.FC<TasksViewProps> = ({
 
       {/* Daily Trivia Quiz Widget */}
       {quiz && (
-        <div className="p-6 bg-gradient-to-tr from-[#E6DFD3]/10 to-[#D2DCD0]/10 border border-[#E6DFD3]/20 rounded-3xl space-y-4 shadow-sm">
+        <div className="p-6 bg-gradient-to-tr from-[#EBE3D5]/10 to-[#D3ECD1]/10 border border-[#EBE3D5]/20 rounded-3xl space-y-4 shadow-sm">
           <div className="flex justify-between items-start">
             <div>
               <h3 className="heading-font text-base font-bold text-slate-800 dark:text-white flex items-center gap-2">
@@ -133,7 +133,7 @@ export const TasksView: React.FC<TasksViewProps> = ({
                     btnStyle = "border-slate-100 dark:border-slate-900 bg-slate-50/50 dark:bg-slate-950/20 text-slate-400 dark:text-slate-655 cursor-not-allowed opacity-50";
                   }
                 } else {
-                  btnStyle += " hover:border-[#E6DFD3]/50 dark:hover:border-[#E6DFD3]/50 hover:bg-slate-50 dark:hover:bg-slate-850 cursor-pointer";
+                  btnStyle += " hover:border-[#EBE3D5]/50 dark:hover:border-[#EBE3D5]/50 hover:bg-slate-50 dark:hover:bg-slate-850 cursor-pointer";
                 }
 
                 return (

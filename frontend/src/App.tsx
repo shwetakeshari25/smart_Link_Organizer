@@ -537,8 +537,8 @@ export default function App() {
 
         {/* User XP Widget in Sidebar */}
         <div className="p-5 border-t border-slate-200/50 dark:border-slate-800/20">
-          <div className="p-4 bg-gradient-to-tr from-[#7A8F75]/10 to-[#34BEA9]/10 rounded-2xl border border-[#7A8F75]/10 flex items-center gap-3">
-            <div className="p-2 bg-[#7A8F75]/10 rounded-xl text-[#7A8F75] shrink-0">
+          <div className="p-4 bg-gradient-to-tr from-[#82C25C]/10 to-[#34BEA9]/10 rounded-2xl border border-[#82C25C]/10 flex items-center gap-3">
+            <div className="p-2 bg-[#82C25C]/10 rounded-xl text-[#82C25C] shrink-0">
               <Award className="w-5 h-5" />
             </div>
             <div className="flex-1 min-w-0">
@@ -712,7 +712,7 @@ export default function App() {
                   {filteredLinks.length === 0 ? (
                     <div className="p-16 bg-gradient-to-br from-[#FAF6FA] to-[#DEAB90]/15 border border-[#DEAB90]/30 rounded-3xl text-center shadow-lg">
                       <Star className="w-12 h-12 text-[#DEAB90] fill-current mx-auto mb-3 animate-pulse" />
-                      <h3 className="text-base font-bold text-[#2F362E] heading-font">No favorites saved</h3>
+                      <h3 className="text-base font-bold text-[#2C332A] heading-font">No favorites saved</h3>
                       <p className="text-xs text-[#64748B] mt-1">
                         Go to your Dashboard or Categories and click the heart icon on any preview card to add it here.
                       </p>
