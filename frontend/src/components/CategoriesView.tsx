@@ -51,40 +51,40 @@ export const CategoriesView: React.FC<CategoriesViewProps> = ({
     const iconClass = "w-6 h-6";
     switch (name) {
       case 'YouTube':
-        return <Youtube className={`${iconClass} text-[#FF0000] fill-current`} />;
+        return <Youtube className={`${iconClass} text-[#2C332A] fill-current`} />;
       case 'Instagram':
-        return <Instagram className={`${iconClass} text-[#E1306C]`} />;
+        return <Instagram className={`${iconClass} text-[#2C332A]`} />;
       case 'LinkedIn':
-        return <Linkedin className={`${iconClass} text-[#0077B5] fill-current`} />;
+        return <Linkedin className={`${iconClass} text-[#2C332A] fill-current`} />;
       case 'GitHub':
-        return <Github className={`${iconClass} text-[#181717] fill-current`} />;
+        return <Github className={`${iconClass} text-[#2C332A] fill-current`} />;
       case 'Twitter/X':
-        return <svg viewBox="0 0 24 24" className={`${iconClass} text-black fill-current`}><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>;
+        return <svg viewBox="0 0 24 24" className={`${iconClass} text-[#2C332A] fill-current`}><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>;
       case 'Facebook':
-        return <Facebook className={`${iconClass} text-[#1877F2] fill-current`} />;
+        return <Facebook className={`${iconClass} text-[#2C332A] fill-current`} />;
       case 'Reddit':
         return (
-          <svg viewBox="0 0 24 24" className={`${iconClass} text-[#FF4500] fill-current`}>
+          <svg viewBox="0 0 24 24" className={`${iconClass} text-[#2C332A] fill-current`}>
             <path d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.85-1.68-6.23-1.78l1.32-4.17 4.26 1c.02.79.68 1.4 1.48 1.4 1.1 0 2-.9 2-2s-.9-2-2-2c-.74 0-1.36.4-1.72.97l-4.7-1.1c-.24-.05-.47.1-.53.34L10.8 7.95C8.36 8.05 6.07 8.75 4.38 9.77c-.55-.77-1.46-1.27-2.48-1.27-1.65 0-3 1.35-3 3 0 1.23.75 2.27 1.8 2.73-.07.4-.1.82-.1 1.24 0 3.32 4.03 6.03 9 6.03s9-2.7 9-6.03c0-.42-.03-.84-.1-1.24 1.05-.46 1.8-1.5 1.8-2.73zM6 13.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5c0 .83-.67 1.5-1.5 1.5S6 14.33 6 13.5zm9.5 4.5c-1.5 1.5-4.5 1.5-6 0-.3-.3-.3-.7 0-1 .3-.3.7-.3 1 0 .9.9 3.1.9 4 0 .3-.3.7-.3 1 0 .3.3.3.7 0 1zM16.5 15c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
           </svg>
         );
       case 'Medium':
         return (
-          <svg viewBox="0 0 24 24" className={`${iconClass} text-black fill-current`}>
+          <svg viewBox="0 0 24 24" className={`${iconClass} text-[#2C332A] fill-current`}>
             <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42zM24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75c.66 0 1.19 2.58 1.19 5.75z"/>
           </svg>
         );
       case 'Dev.to':
         return (
-          <svg viewBox="0 0 24 24" className={`${iconClass} text-[#0A0A0A] fill-none stroke-current`} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <svg viewBox="0 0 24 24" className={`${iconClass} text-[#2C332A] fill-none stroke-current`} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="16 18 22 12 16 6" />
             <polyline points="8 6 2 12 8 18" />
           </svg>
         );
       case 'Personal Website':
-        return <Globe className={`${iconClass} text-[#0F766E]`} />;
+        return <Globe className={`${iconClass} text-[#2C332A]`} />;
       default:
-        return <Link className={`${iconClass} text-[#E11D48]`} />;
+        return <Link className={`${iconClass} text-[#2C332A]`} />;
     }
   };
 

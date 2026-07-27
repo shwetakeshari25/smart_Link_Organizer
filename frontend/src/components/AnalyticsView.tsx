@@ -35,7 +35,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ links }) => {
   };
 
   const platformData = getPlatformData();
-  const COLORS = ['#2563EB', '#14B8A6', '#EBE3D5', '#22C55E', '#F59E0B', '#EF4444', '#EC4899', '#64748B'];
+  const COLORS = ['#82C25C', '#EBE3D5', '#D3ECD1', '#5E824A', '#E4D5BE', '#C6B9A8', '#FAF6EE', '#9EE07A'];
 
   // 3. Category Data for Bar Chart
   const getCategoryData = () => {
@@ -84,7 +84,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ links }) => {
 
       {/* Grid of Metric Cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="p-5 card-sky-blue rounded-3xl border border-[#D4C5B9]/20 flex items-center gap-4 shadow-sm">
+        <div className="p-5 card-sky-blue rounded-3xl border border-[#D3ECD1]/20 flex items-center gap-4 shadow-sm">
           <div className="p-3 bg-white/30 rounded-2xl text-[#2C332A]">
             <FileText className="w-5 h-5" />
           </div>
@@ -94,7 +94,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ links }) => {
           </div>
         </div>
 
-        <div className="p-5 card-mint-green rounded-3xl border border-[#7EE7C4]/20 flex items-center gap-4 shadow-sm">
+        <div className="p-5 card-mint-green rounded-3xl border border-[#D3ECD1]/20 flex items-center gap-4 shadow-sm">
           <div className="p-3 bg-white/30 rounded-2xl text-[#2C332A]">
             <CheckCircle className="w-5 h-5" />
           </div>
@@ -104,7 +104,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ links }) => {
           </div>
         </div>
 
-        <div className="p-5 card-peach rounded-3xl border border-[#F8C79A]/20 flex items-center gap-4 shadow-sm">
+        <div className="p-5 card-peach rounded-3xl border border-[#EBE3D5]/20 flex items-center gap-4 shadow-sm">
           <div className="p-3 bg-white/30 rounded-2xl text-[#2C332A]">
             <Clock className="w-5 h-5" />
           </div>
@@ -114,7 +114,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ links }) => {
           </div>
         </div>
 
-        <div className="p-5 card-baby-pink rounded-3xl border border-[#F8B4D9]/20 flex items-center gap-4 shadow-sm">
+        <div className="p-5 card-baby-pink rounded-3xl border border-[#EBE3D5]/20 flex items-center gap-4 shadow-sm">
           <div className="p-3 bg-white/30 rounded-2xl text-[#2C332A]">
             <Tag className="w-5 h-5" />
           </div>
@@ -141,8 +141,8 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ links }) => {
                 <AreaChart data={weeklyData} margin={{ top: 10, right: 10, left: -25, bottom: 0 }}>
                   <defs>
                     <linearGradient id="colorSaved" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#2563EB" stopOpacity={0.4}/>
-                      <stop offset="95%" stopColor="#2563EB" stopOpacity={0.0}/>
+                      <stop offset="5%" stopColor="#82C25C" stopOpacity={0.4}/>
+                      <stop offset="95%" stopColor="#82C25C" stopOpacity={0.0}/>
                     </linearGradient>
                   </defs>
                   <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="rgba(148, 163, 184, 0.1)" />
@@ -150,15 +150,15 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ links }) => {
                   <YAxis stroke="#94A3B8" fontSize={10} tickLine={false} allowDecimals={false} />
                   <Tooltip 
                     contentStyle={{ 
-                      backgroundColor: 'rgba(15, 23, 42, 0.9)', 
+                      backgroundColor: 'rgba(26, 32, 24, 0.9)', 
                       border: 'none', 
                       borderRadius: '12px',
-                      color: '#F8FAFC',
+                      color: '#FAF6EE',
                       fontSize: '11px',
                       fontFamily: "'Inter', sans-serif"
                     }} 
                   />
-                  <Area type="monotone" dataKey="linksSaved" stroke="#2563EB" strokeWidth={2} fillOpacity={1} fill="url(#colorSaved)" />
+                  <Area type="monotone" dataKey="linksSaved" stroke="#82C25C" strokeWidth={2} fillOpacity={1} fill="url(#colorSaved)" />
                 </AreaChart>
               </ResponsiveContainer>
             )}
@@ -166,7 +166,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ links }) => {
         </div>
 
         {/* 2. Platform Distribution Pie Chart */}
-        <div className="p-6 bg-gradient-to-br from-white/95 to-[#D4C5B9]/10 border border-[#D4C5B9]/30 rounded-3xl shadow-lg">
+        <div className="p-6 bg-gradient-to-br from-white/95 to-[#EBE3D5]/10 border border-[#EBE3D5]/30 rounded-3xl shadow-lg">
           <h3 className="heading-font text-base font-bold text-[#2C332A] mb-4 flex items-center gap-2">
             <PieChartIcon className="w-4 h-4 text-[#82C25C]" /> Platform Share
           </h3>
@@ -202,9 +202,9 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ links }) => {
         </div>
 
         {/* 3. Category Distribution Bar Chart */}
-        <div className="p-6 bg-gradient-to-br from-white/95 to-[#7EE7C4]/10 border border-[#7EE7C4]/30 rounded-3xl shadow-lg lg:col-span-2">
+        <div className="p-6 bg-gradient-to-br from-white/95 to-[#D3ECD1]/10 border border-[#D3ECD1]/30 rounded-3xl shadow-lg lg:col-span-2">
           <h3 className="heading-font text-base font-bold text-[#2C332A] mb-4 flex items-center gap-2">
-            <BarChart2 className="w-4 h-4 text-[#34BEA9]" /> Category Breakdown
+            <BarChart2 className="w-4 h-4 text-[#82C25C]" /> Category Breakdown
           </h3>
           <div className="h-64">
             {totalLinks === 0 ? (
@@ -217,14 +217,14 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ links }) => {
                   <YAxis stroke="#94A3B8" fontSize={10} tickLine={false} allowDecimals={false} />
                   <Tooltip 
                     contentStyle={{ 
-                      backgroundColor: 'rgba(15, 23, 42, 0.9)', 
+                      backgroundColor: 'rgba(26, 32, 24, 0.9)', 
                       border: 'none', 
                       borderRadius: '12px',
-                      color: '#F8FAFC',
+                      color: '#FAF6EE',
                       fontSize: '11px'
                     }} 
                   />
-                  <Bar dataKey="value" fill="#14B8A6" radius={[6, 6, 0, 0]} maxBarSize={45}>
+                  <Bar dataKey="value" fill="#82C25C" radius={[6, 6, 0, 0]} maxBarSize={45}>
                     {categoryData.map((_entry, index) => (
                       <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                     ))}
@@ -265,10 +265,10 @@ const ReChartsPieChartWrapper: React.FC<PieWrapperProps> = ({ platformData, colo
       </Pie>
       <Tooltip 
         contentStyle={{ 
-          backgroundColor: 'rgba(15, 23, 42, 0.9)', 
+          backgroundColor: 'rgba(26, 32, 24, 0.9)', 
           border: 'none', 
           borderRadius: '12px',
-          color: '#F8FAFC',
+          color: '#FAF6EE',
           fontSize: '11px'
         }} 
       />
